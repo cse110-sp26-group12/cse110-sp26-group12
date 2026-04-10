@@ -1,0 +1,1 @@
+We will use gemini code assist as it is the only free option.
