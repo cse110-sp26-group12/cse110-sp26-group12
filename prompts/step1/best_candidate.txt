@@ -1,0 +1,13 @@
+Everyone pick the best one from your 5 folders and add it to your line. DO NOT CHANGE OTHER LINES OR WE WILL GET MERGE CONFLICTS
+e.g. Julian - 001-005: 005
+
+Julian - 001-005
+Zhengyin - 006-010
+Alex - 011-015
+Josh - 016-020
+Srini - 021-025
+Kyle - 026-030
+Cedric - 031-035
+William - 036-040
+Raiden - 041-045
+Nathan - 046-050
