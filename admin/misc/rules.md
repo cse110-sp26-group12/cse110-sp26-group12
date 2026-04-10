@@ -19,7 +19,7 @@ This document serves as our "Source of Truth" for team culture, expectations, an
 
 2. **Source of Truth:** Where do final decisions live? If a technical decision is made in a DM, how is it communicated to the rest of the group to ensure no one is working on outdated info?
 
-3. **Meeting Etiquette:** What are the expectations for attendance, cameras (if remote), and preparation? What is the protocol if a member absolutely cannot make a meeting?
+3. **Meeting Etiquette:** What are the expectations for attendance, cameras (if remote), and preparation? What is the protocol if a member absolutely cannot make a meeting? What steps do a typical meeting include?
 
 ---
 
