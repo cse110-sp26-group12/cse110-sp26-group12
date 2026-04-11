@@ -22,9 +22,9 @@
 | 	Alex Twano | 2nd year CS major | [Link](https://t-pizel.github.io/GitHub-Pages-Project/) |
 | 	Joshua Robles | 3rd year CS major | [Link](https://j4robles.github.io/Github-Pages-project/) |
 |Srinivasa Perisetla  | 3rd year CS major | [Link](https://srinivasaperisetla.github.io/Github-Pages-Project/GitHub) |
-| 	Kyle Kim| [Missing Overview] | [Missing Link](Lab1_URL) |
+| 	Kyle Kim| 2nd year CS major | [Link](https://pluchus.github.io/CSE110-Lab-Week1/) |
 | 	Cedric Wells | 4th year Math-CS major | [Link](https://cedr1c-jr.github.io/GitHub-Pages/) |
-| 	Yanbai (William) Li | [Missing Overview] | [Missing Link](Lab1_URL) |
+| 	Yanbai (William) Li | 3rd Year CS major | [Link](https://williamlizi94.github.io/lab_wk1_cse110/) |
 | 	Raiden Louie | 2nd year CS and Cognitive Behavioral Neuroscience Major | [Link](https://raidenaenae.github.io/cse110-lab1/) |
 |Varsha Jawadi | 2nd year CS major | [Link](https://varsha106-pixel.github.io/GitHub-Pages-project/#varsha-jawadi) |
 |	Nathan Scott | 2nd year CS major | [ Link](https://ncscott95.github.io/) |
