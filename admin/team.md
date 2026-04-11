@@ -1,12 +1,12 @@
 
- # Team 12: [Team Name]
+ # Team 12: Porygon12
 
 
 ---
 
 ## 🎨 Branding & Identity
-* **Mascot:** [Name of Mascot]
-* **Theme:** [Brief description of colors/theme]
+* **Mascot:** Porygon2
+* **Theme colors:** red, blue
 * **Values:** 1. **Transparency:** Open communication in all channels.
     2. **Reliability:** Delivering technical modules on schedule.
     3. **Excellence:** Writing clean, scalable code .
@@ -18,16 +18,16 @@
 | Member Name | Overview | Developer Profile |
 | :--- | :--- |  :--- |
 | Jialin (Julian) Wang (Lead) | 2nd year CS major | [Link](https://jialinwang28.github.io/CSE110-Lab1/) |
-| Zhengyin Yang (Lead) | [Missing Overview] | [Link](https://zhengyin666.github.io/CSE110-Lab-Week1/) |
-| 	Alex Twano | [Missing Overview] | [Missing Link](Lab1_URL) |
-| 	Joshua Robles | [Missing Overview] | [Link](https://j4robles.github.io/Github-Pages-project/) |
+| Zhengyin Yang (Lead) | 3rd year CS major | [Link](https://zhengyin666.github.io/CSE110-Lab-Week1/) |
+| 	Alex Twano | 2nd year CS major | [Link](https://t-pizel.github.io/GitHub-Pages-Project/) |
+| 	Joshua Robles | 3rd year CS major | [Link](https://j4robles.github.io/Github-Pages-project/) |
 |Srinivasa Perisetla  | 3rd year CS major | [Link](https://srinivasaperisetla.github.io/Github-Pages-Project/GitHub) |
 | 	Kyle Kim| [Missing Overview] | [Missing Link](Lab1_URL) |
-| 	Cedric Wells | [Missing Overview] | [Missing Link](Lab1_URL) |
+| 	Cedric Wells | 4th year Math-CS major | [Link](https://cedr1c-jr.github.io/GitHub-Pages/) |
 | 	Yanbai (William) Li | [Missing Overview] | [Missing Link](Lab1_URL) |
 | 	Raiden Louie | 2nd year CS and Cognitive Behavioral Neuroscience Major | [Link](https://raidenaenae.github.io/cse110-lab1/) |
 |Varsha Jawadi | 2nd year CS major | [Link](https://varsha106-pixel.github.io/GitHub-Pages-project/#varsha-jawadi) |
-|	Nathan Scott | [Missing Overview] | [Missing Link](Lab1_URL) |
+|	Nathan Scott | 2nd year CS major | [ Link](https://ncscott95.github.io/) |
 
 ---
 
