@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hallucination Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="machine-container">
+        <div class="header">
+            <h1>PROMPT ENGINEER 9000</h1>
+            <p class="subtitle">STATUS: BURNING VENTURE CAPITAL</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span>COMPUTE TOKENS</span>
+                <strong id="credits">100</strong>
+            </div>
+            <div class="stat-box">
+                <span>VAPORWARE VALUATION</span>
+                <strong id="wins">0</strong>
+            </div>
+        </div>
+
+        <div class="slot-row">
+            <div class="reel" id="reel1">🤖</div>
+            <div class="reel" id="reel2">🤖</div>
+            <div class="reel" id="reel3">🤖</div>
+        </div>
+
+        <div class="control-panel">
+            <button id="spin-button" onclick="spin()">SPEND 10 TOKENS TO INFERENCE</button>
+        </div>
+        
+        <div id="message">Ready to disrupt the industry?</div>
+        
+        <div class="console">
+            <p>> System initialized...</p>
+            <p>> Loading unlicensed training data...</p>
+        </div>
+    </div>
+
+    <script>
+        const symbols = ['🤖', '🚀', '💸', '💩', '🧠', '☁️'];
+        const messages = [
+            "Hallucinating with confidence...",
+            "Overfitting to your request...",
+            "Pitching to VCs for Series A...",
+            "Wrapping an API and calling it 'SOTA'...",
+            "Consuming a small country's power grid...",
+            "Scraping Reddit for wrong answers..."
+        ];
+
+        let credits = 100;
+        let wins = 0;
+        const spinCost = 10;
+
+        const reelElements = [
+            document.getElementById('reel1'),
+            document.getElementById('reel2'),
+            document.getElementById('reel3')
+        ];
+        const btn = document.getElementById('spin-button');
+        const msg = document.getElementById('message');
+        const creditEl = document.getElementById('credits');
+        const winEl = document.getElementById('wins');
+
+        function updateUI() {
+            creditEl.innerText = credits;
+            winEl.innerText = wins;
+            btn.disabled = credits < spinCost;
+            if (credits < spinCost) {
+                msg.innerText = "OUT OF COMPUTE. GO TO SAND HILL ROAD FOR FUNDING.";
+                msg.style.color = "#ff4444";
+            }
+        }
+
+        async function spin() {
+            if (credits < spinCost) return;
+
+            credits -= spinCost;
+            msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+            msg.style.color = "var(--neon-pink)";
+            updateUI();
+            
+            btn.disabled = true;
+
+            const spinDuration = 1200;
+            const interval = 100;
+            
+            const timer = setInterval(() => {
+                reelElements.forEach(reel => {
+                    reel.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+                });
+            }, interval);
+
+            setTimeout(() => {
+                clearInterval(timer);
+                
+                const results = reelElements.map(() => symbols[Math.floor(Math.random() * symbols.length)]);
+                reelElements.forEach((reel, i) => reel.innerText = results[i]);
+
+                checkWin(results);
+            }, spinDuration);
+        }
+
+        function checkWin(results) {
+            const allSame = results.every(val => val === results[0]);
+            
+            if (allSame) {
+                const prize = 50;
+                credits += prize;
+                wins += 1;
+                msg.innerText = `AGI ACHIEVED! (Actually just luck). +${prize} Tokens`;
+                msg.style.color = "var(--neon-blue)";
+                if (window.navigator.vibrate) window.navigator.vibrate([100, 50, 100]);
+            } else if (results.includes('💩')) {
+                msg.innerText = "Model collapse detected. Nonsense sent to production.";
+            } else {
+                msg.innerText = "Just another generic chatbot. Try again.";
+            }
+            updateUI();
+        }
+    </script>
+</body>
+</html>
