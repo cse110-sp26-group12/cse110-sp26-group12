@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Jackpot | AI Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>NEURAL NETWORK JACKPOT</h1>
+            <p class="subtitle">PROBABILITY OF AGI: <span id="agi-prob">0.0001%</span></p>
+        </header>
+
+        <div class="slot-machine">
+            <div class="reels-container">
+                <div class="reel" id="reel1"><div class="reel-strip">🧊</div></div>
+                <div class="reel" id="reel2"><div class="reel-strip">🧊</div></div>
+                <div class="reel" id="reel3"><div class="reel-strip">🧊</div></div>
+            </div>
+
+            <div class="status-panel">
+                <div class="terminal-log" id="terminal-log">
+                    <p>> INITIALIZING WEIGHTS...</p>
+                    <p>> SYSTEM READY.</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="stats">
+                    <div class="stat-box">
+                        <label>COMPUTE CREDITS</label>
+                        <span id="credits">100</span>
+                    </div>
+                    <div class="stat-box">
+                        <label>TOKEN QUOTA</label>
+                        <span id="winnings">0</span>
+                    </div>
+                </div>
+                
+                <button id="spin-button">RUN INFERENCE (10 CR)</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>WARNING: MAY HALLUCINATE WINNINGS. PAPERCLIPS ARE NOT CURRENCY.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
