@@ -1,0 +1,231 @@
+:root {
+    --bg-color: #0d0d0d;
+    --panel-bg: #1a1a1a;
+    --neon-pink: #ff00ff;
+    --neon-cyan: #00ffff;
+    --neon-lime: #39ff14;
+    --text-color: #f0f0f0;
+    --accent-color: #4a4a4a;
+    --terminal-green: #32cd32;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#game-container {
+    background-color: var(--panel-bg);
+    padding: 2rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 255, 255, 0.1);
+    max-width: 600px;
+    width: 95%;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+header h1 span {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+.subtitle {
+    font-style: italic;
+    color: var(--accent-color);
+    margin-top: -0.5rem;
+    font-size: 0.9rem;
+}
+
+#stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.stat-box {
+    background: #000;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    flex: 1;
+    margin: 0 0.5rem;
+}
+
+.stat-box label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--accent-color);
+}
+
+#balance, #bet-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--neon-lime);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#slot-machine {
+    position: relative;
+    background: #000;
+    border: 4px solid #222;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.reels {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.reel {
+    width: 100px;
+    height: 150px;
+    background: #111;
+    border: 2px solid #333;
+    overflow: hidden;
+    position: relative;
+}
+
+.reel-strip {
+    position: absolute;
+    width: 100%;
+    transition: transform 3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    display: flex;
+    flex-direction: column;
+}
+
+.symbol {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    user-select: none;
+}
+
+.winning-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bet-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#current-bet-label {
+    font-weight: bold;
+    color: var(--neon-cyan);
+}
+
+.btn-small {
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-small:hover {
+    background: var(--neon-cyan);
+    color: #000;
+}
+
+#spin-button {
+    background: linear-gradient(135deg, var(--neon-pink), #800080);
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    transition: transform 0.1s, box-shadow 0.2s;
+    width: 100%;
+}
+
+#spin-button:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
+}
+
+#spin-button:active {
+    transform: scale(0.98);
+}
+
+#spin-button:disabled {
+    filter: grayscale(1);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+#ai-console {
+    margin-top: 2rem;
+    background: #000;
+    border: 1px solid var(--accent-color);
+    padding: 1rem;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    height: 100px;
+    overflow-y: auto;
+}
+
+.console-header {
+    border-bottom: 1px solid var(--accent-color);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+#console-output {
+    color: var(--terminal-green);
+    line-height: 1.4;
+}
+
+/* Animations */
+@keyframes glow {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+header h1 span {
+    animation: glow 2s infinite ease-in-out;
+}
