@@ -3,34 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Slot Machine: Token Burner</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AI Hallucination Engine v0.1.0-alpha</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="machine-container">
+<body class="terminal-body">
+    <div class="container">
         <header>
-            <h1>LLM SLOT MACHINE</h1>
-            <p>Burn credits. Generate hype.</p>
+            <h1 class="glitch-text">AI HALLUCINATION ENGINE</h1>
+            <p class="subtitle">v0.1.0-alpha | Status: <span id="status">UNSTABLE</span></p>
         </header>
 
-        <div class="stats">
-            <div class="stat-box">
-                <span class="label">Compute Tokens:</span>
-                <span id="token-count">1000</span>
+        <main class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel1">🤖</div>
+                <div class="reel" id="reel2">🤖</div>
+                <div class="reel" id="reel3">🤖</div>
             </div>
-        </div>
+        </main>
 
-        <div class="slots">
-            <div class="reel" id="reel1">🤖</div>
-            <div class="reel" id="reel2">🤖</div>
-            <div class="reel" id="reel3">🤖</div>
-        </div>
+        <section class="stats-bar">
+            <div class="stat-item">
+                <span class="label">COMPUTE CREDITS:</span>
+                <span class="value" id="credits">100</span>
+            </div>
+            <div class="stat-item">
+                <span class="label">LAST REWARD:</span>
+                <span class="value" id="last-win">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="label">MODEL:</span>
+                <span class="value">GPT-∞ (Experimental)</span>
+            </div>
+        </section>
 
-        <div class="controls">
-            <button id="spin-button">PROMPT (Cost: 50)</button>
-        </div>
+        <section class="console-box">
+            <div class="console-header">SYSTEM_LOG:</div>
+            <div class="console-content" id="log">
+                <div>[SYSTEM] Booting Inference Kernel...</div>
+                <div>[SYSTEM] GPU Temperature: CRITICAL</div>
+                <div>[SYSTEM] Ready for prompting.</div>
+            </div>
+        </section>
 
-        <div class="status-msg" id="status-msg">Ready to overfit?</div>
+        <footer class="controls">
+            <button id="spin-btn" class="terminal-btn">RUN INFERENCE (-10 CREDITS)</button>
+            <button id="refill-btn" class="terminal-btn hidden">SECURE VC FUNDING (+100 CREDITS)</button>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>

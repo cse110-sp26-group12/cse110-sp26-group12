@@ -1,0 +1,193 @@
+:root {
+    --terminal-green: #33ff33;
+    --terminal-bg: #050505;
+    --terminal-glow: 0 0 10px rgba(51, 255, 51, 0.5);
+    --terminal-amber: #ffcc00;
+}
+
+@font-face {
+    font-family: 'Terminal';
+    src: local('Courier New'), local('Courier'), monospace;
+}
+
+body {
+    background-color: var(--terminal-bg);
+    color: var(--terminal-green);
+    font-family: 'Terminal', monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    border: 2px solid var(--terminal-green);
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: var(--terminal-glow);
+    background: rgba(0, 20, 0, 0.8);
+    position: relative;
+}
+
+/* Scanline Effect */
+.container::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 10;
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--terminal-green);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.glitch-text {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    animation: glitch 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+  0% { text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9; }
+  100% { text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; }
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.slot-machine {
+    margin: 2rem 0;
+}
+
+.reels {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    background: #000;
+    padding: 1rem;
+    border: 1px inset var(--terminal-green);
+}
+
+.reel {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border: 1px solid var(--terminal-green);
+    background: rgba(51, 255, 51, 0.05);
+}
+
+.reel.spinning {
+    animation: reel-blur 0.1s infinite linear;
+}
+
+@keyframes reel-blur {
+    0% { filter: blur(0px); transform: translateY(-5px); }
+    50% { filter: blur(8px); transform: translateY(0); }
+    100% { filter: blur(0px); transform: translateY(5px); }
+}
+
+.stats-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.stat-item .value {
+    color: #fff;
+    font-weight: bold;
+}
+
+.console-box {
+    background: #000;
+    border: 1px solid var(--terminal-green);
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.console-header {
+    font-size: 0.7rem;
+    border-bottom: 1px solid var(--terminal-green);
+    margin-bottom: 0.5rem;
+}
+
+.console-content {
+    height: 80px;
+    overflow-y: auto;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.terminal-btn {
+    background: transparent;
+    color: var(--terminal-green);
+    border: 2px solid var(--terminal-green);
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.terminal-btn:hover {
+    background: var(--terminal-green);
+    color: var(--terminal-bg);
+    box-shadow: var(--terminal-glow);
+}
+
+.terminal-btn:active {
+    transform: translateY(2px);
+}
+
+.terminal-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #555;
+    color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+#status.error {
+    color: var(--terminal-amber);
+    animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--terminal-green);
+}
