@@ -3,225 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neural Jackpot 5000</title>
-    <style>
-        :root {
-            --neon-blue: #00f2ff;
-            --ai-purple: #7000ff;
-            --bg-dark: #0a0a0c;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        .container {
-            text-align: center;
-            border: 2px solid var(--ai-purple);
-            padding: 2rem;
-            border-radius: 20px;
-            background: rgba(20, 20, 25, 0.8);
-            box-shadow: 0 0 30px rgba(112, 0, 255, 0.3);
-        }
-
-        h1 {
-            margin-top: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--neon-blue);
-            text-shadow: 0 0 10px var(--neon-blue);
-        }
-
-        .token-display {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-family: monospace;
-        }
-
-        .slot-machine {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 2rem;
-            perspective: 1000px;
-        }
-
-        .reel {
-            width: 100px;
-            height: 120px;
-            background: #1a1a20;
-            border: 3px solid #333;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            transition: transform 0.1s;
-        }
-
-        .reel.spinning {
-            animation: blur 0.1s infinite linear;
-        }
-
-        @keyframes blur {
-            0% { filter: blur(0px); transform: translateY(-5px); }
-            50% { filter: blur(4px); }
-            100% { filter: blur(0px); transform: translateY(5px); }
-        }
-
-        button {
-            background: linear-gradient(45deg, var(--ai-purple), var(--neon-blue));
-            border: none;
-            padding: 1rem 2rem;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: transform 0.1s, box-shadow 0.3s;
-            text-transform: uppercase;
-        }
-
-        button:hover {
-            box-shadow: 0 0 20px var(--neon-blue);
-        }
-
-        button:active {
-            transform: scale(0.95);
-        }
-
-        button:disabled {
-            filter: grayscale(1);
-            cursor: not-allowed;
-        }
-
-        #status-message {
-            margin-top: 1.5rem;
-            height: 1.5rem;
-            font-style: italic;
-            color: #aaa;
-        }
-
-        .stats {
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: #555;
-        }
-    </style>
+    <title>GPT-9 TOKEN BURNER</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="app">
+        <header>
+            <h1 class="glitch-text" data-text="GPT-9 TOKEN BURNER">GPT-9 TOKEN BURNER</h1>
+            <p class="subtitle">Burning your Series A, one token at a time.</p>
+        </header>
 
-    <div class="container">
-        <h1>Neural Jackpot 5000</h1>
-        <div class="token-display">Context Tokens: <span id="token-count">1000</span></div>
-        
-        <div class="slot-machine">
-            <div class="reel" id="reel1">🤖</div>
-            <div class="reel" id="reel2">🤖</div>
-            <div class="reel" id="reel3">🤖</div>
-        </div>
+        <div class="main-layout">
+            <!-- LEFT: DASHBOARD -->
+            <aside class="panel dashboard">
+                <div class="stat-box">
+                    <label>COMPUTE CREDITS (Tokens)</label>
+                    <div id="credits" class="value">10,000</div>
+                </div>
+                <div class="stat-box">
+                    <label>VALUATION (Series B?)</label>
+                    <div id="valuation" class="value success">$0</div>
+                </div>
+                <div class="control-box">
+                    <label>TEMPERATURE (Volatility)</label>
+                    <input type="range" id="temp-slider" min="0" max="100" value="20">
+                    <div id="temp-display" class="stat-mini">0.2 / Stable</div>
+                </div>
+            </aside>
 
-        <button id="spin-button">Inference (Cost: 50 Tokens)</button>
-        
-        <div id="status-message">Ready to disrupt the industry...</div>
+            <!-- CENTER: SLOT MACHINE -->
+            <main class="machine-frame">
+                <div class="reels-container">
+                    <div class="reel" id="reel-1"><div class="strip"></div></div>
+                    <div class="reel" id="reel-2"><div class="strip"></div></div>
+                    <div class="reel" id="reel-3"><div class="strip"></div></div>
+                    <div class="payline"></div>
+                </div>
+                <div class="machine-controls">
+                    <div class="bet-info">
+                        <label>INFERENCE COST:</label>
+                        <span id="bet-amount">100</span>
+                    </div>
+                    <button id="spin-btn" class="primary-btn">RUN INFERENCE (SPIN)</button>
+                </div>
+            </main>
 
-        <div class="stats">
-            GPU Heat: <span id="heat">32</span>°C | Weights: Frozen
+            <!-- RIGHT: TERMINAL LOGS -->
+            <aside class="panel terminal">
+                <div class="terminal-header">CONSOLE OUTPUT</div>
+                <div id="logs" class="terminal-content">
+                    <div class="log-entry">> Initializing GPT-9 weights...</div>
+                    <div class="log-entry">> GPU cluster online. Ready to burn.</div>
+                </div>
+                <button id="reset-btn" class="reset-btn">PIVOT (RESET)</button>
+            </aside>
         </div>
     </div>
-
-    <script>
-        const SYMBOLS = ['🤖', '🧠', '📉', '🦜', '🚀', '☁️', '💎'];
-        const SPIN_COST = 50;
-        const WIN_PRIZE = 500;
-        const JACKPOT_PRIZE = 5000;
-
-        let tokens = 1000;
-        let isSpinning = false;
-
-        const tokenDisplay = document.getElementById('token-count');
-        const reels = [
-            document.getElementById('reel1'),
-            document.getElementById('reel2'),
-            document.getElementById('reel3')
-        ];
-        const spinButton = document.getElementById('spin-button');
-        const statusMsg = document.getElementById('status-message');
-        const heatDisplay = document.getElementById('heat');
-
-        const phrases = [
-            "Scaling laws are kicking in...",
-            "Minimizing loss function...",
-            "Hallucinating success...",
-            "Optimizing for clicks...",
-            "Prompt engineering in progress...",
-            "Burning VC money...",
-            "Vectorizing your emotions..."
-        ];
-
-        function updateDisplay() {
-            tokenDisplay.textContent = tokens;
-            spinButton.disabled = tokens < SPIN_COST || isSpinning;
-            heatDisplay.textContent = Math.floor(Math.random() * 20) + 70;
-        }
-
-        async function spin() {
-            if (tokens < SPIN_COST || isSpinning) return;
-
-            // Spend tokens
-            isSpinning = true;
-            tokens -= SPIN_COST;
-            updateDisplay();
-            statusMsg.textContent = phrases[Math.floor(Math.random() * phrases.length)];
-
-            // Start animation
-            reels.forEach(reel => reel.classList.add('spinning'));
-
-            // Simulated Latency (Inference Time)
-            for (let i = 0; i < 3; i++) {
-                await new Promise(resolve => setTimeout(resolve, 500 + (i * 400)));
-                const finalSymbol = SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
-                reels[i].textContent = finalSymbol;
-                reels[i].classList.remove('spinning');
-            }
-
-            checkWin();
-            isSpinning = false;
-            updateDisplay();
-        }
-
-        function checkWin() {
-            const results = reels.map(r => r.textContent);
-            
-            if (results[0] === results[1] && results[1] === results[2]) {
-                if (results[0] === '💎') {
-                    tokens += JACKPOT_PRIZE;
-                    statusMsg.textContent = "AGI ACHIEVED! (Big Win)";
-                } else {
-                    tokens += WIN_PRIZE;
-                    statusMsg.textContent = "Insight Found! Seed funding secured.";
-                }
-            } else if (results[0] === results[1] || results[1] === results[2]) {
-                tokens += Math.floor(SPIN_COST * 1.5);
-                statusMsg.textContent = "Partial match: It's a stochastic success!";
-            } else {
-                statusMsg.textContent = "Hallucination detected. Try again.";
-            }
-
-            if (tokens <= 0) {
-                statusMsg.textContent = "Out of tokens. Please upload more training data.";
-            }
-        }
-
-        spinButton.addEventListener('click', spin);
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
