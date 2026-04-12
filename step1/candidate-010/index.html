@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Miner: AI Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>TOKEN MINER</h1>
+            <p class="subtitle">Next-Gen Large Language Payout (LLP)</p>
+        </header>
+
+        <div class="stats-panel">
+            <div class="stat">
+                <span class="label">COMPUTE TOKENS:</span>
+                <span id="token-count">1000</span>
+            </div>
+            <div class="stat">
+                <span class="label">INFERENCE COST:</span>
+                <span id="spin-cost">50</span>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reel-container">
+                <div class="reel" id="reel-1">
+                    <div class="symbol">🤖</div>
+                    <div class="symbol">🧠</div>
+                    <div class="symbol">☁️</div>
+                    <div class="symbol">⚡</div>
+                    <div class="symbol">💰</div>
+                    <div class="symbol">📉</div>
+                </div>
+            </div>
+            <div class="reel-container">
+                <div class="reel" id="reel-2">
+                    <div class="symbol">🤖</div>
+                    <div class="symbol">🧠</div>
+                    <div class="symbol">☁️</div>
+                    <div class="symbol">⚡</div>
+                    <div class="symbol">💰</div>
+                    <div class="symbol">📉</div>
+                </div>
+            </div>
+            <div class="reel-container">
+                <div class="reel" id="reel-3">
+                    <div class="symbol">🤖</div>
+                    <div class="symbol">🧠</div>
+                    <div class="symbol">☁️</div>
+                    <div class="symbol">⚡</div>
+                    <div class="symbol">💰</div>
+                    <div class="symbol">📉</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="spin-btn">RUN INFERENCE</button>
+        </div>
+
+        <div class="console-panel">
+            <div class="console-header">AI OUTPUT CONSOLE</div>
+            <div id="console-output" class="console-body">
+                > System initialized.<br>
+                > GPU cluster ready.<br>
+                > Feed me tokens for "intelligence".
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
