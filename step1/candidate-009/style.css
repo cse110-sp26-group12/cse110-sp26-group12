@@ -1,0 +1,184 @@
+:root {
+    --primary-color: #00ff41; /* Classic Matrix/Terminal Green */
+    --bg-color: #0d0208;
+    --accent-color: #ff0055; /* Glitch Magenta */
+    --text-color: #ffffff;
+    --secondary-bg: #1a1a1a;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(13, 2, 8, 0.9);
+    border: 2px solid var(--primary-color);
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+    position: relative;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+h1 span {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.stat-item {
+    padding: 0.5rem;
+    background: var(--secondary-bg);
+    border: 1px solid #333;
+}
+
+.slot-machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.reels {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.reel {
+    width: 100px;
+    height: 150px;
+    background: var(--secondary-bg);
+    border: 3px solid var(--primary-color);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.symbol-container {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+.symbol {
+    font-size: 4rem;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+}
+
+.controls button {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.controls button:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.controls button:active {
+    transform: scale(0.95);
+}
+
+.controls button:disabled {
+    border-color: #333;
+    color: #333;
+    cursor: not-allowed;
+}
+
+.message-center {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px dashed var(--primary-color);
+    min-height: 50px;
+    text-align: center;
+}
+
+#message {
+    margin: 0;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+#message.critical {
+    color: var(--accent-color);
+    animation: blink 0.5s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+/* Animations */
+@keyframes spin {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+.spinning {
+    animation: spin 0.1s linear infinite;
+}
+
+.glitch-bg::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(0, 255, 65, 0.03) 2px
+    );
+    pointer-events: none;
+    z-index: 100;
+}
