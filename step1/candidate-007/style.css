@@ -1,0 +1,243 @@
+:root {
+    --bg-color: #0d0d0d;
+    --panel-bg: rgba(26, 26, 26, 0.85);
+    --neon-cyan: #00f3ff;
+    --neon-magenta: #ff00ff;
+    --neon-green: #39ff14;
+    --text-color: #e0e0e0;
+    --font-mono: 'Courier New', Courier, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.machine-container {
+    background: var(--panel-bg);
+    border: 1px solid var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 450px;
+    max-width: 95vw;
+    backdrop-filter: blur(5px);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+header h1 {
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header h1 small {
+    font-size: 0.8rem;
+    color: var(--neon-magenta);
+}
+
+header .subtitle {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.display-panel {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.75rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--neon-magenta);
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box .label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.stat-box .value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.slot-window {
+    position: relative;
+    height: 150px;
+    background: #050505;
+    border: 2px solid #333;
+    overflow: hidden;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}
+
+.reel-container {
+    display: flex;
+    height: 100%;
+}
+
+.reel {
+    flex: 1;
+    border-right: 1px solid #222;
+    position: relative;
+}
+
+.reel:last-child {
+    border-right: none;
+}
+
+.reel-strip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 3s cubic-bezier(0.1, 0, 0, 1);
+}
+
+.symbol {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    user-select: none;
+}
+
+.payline {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 0, 255, 0.3);
+    transform: translateY(-50%);
+    pointer-events: none;
+    box-shadow: 0 0 10px var(--neon-magenta);
+}
+
+.log-panel {
+    background: #000;
+    color: var(--neon-green);
+    font-size: 0.75rem;
+    padding: 0.75rem;
+    height: 60px;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    overflow-y: hidden;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.log-content {
+    animation: blink-cursor 0.8s step-end infinite;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-group label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+input[type=range] {
+    accent-color: var(--neon-cyan);
+    background: #222;
+    height: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button#prompt-btn {
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 1rem;
+    font-family: var(--font-mono);
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+button#prompt-btn:hover {
+    background: var(--neon-cyan);
+    color: #000;
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.6);
+}
+
+button#prompt-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #444;
+    color: #444;
+}
+
+footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.reset-link {
+    background: transparent;
+    border: none;
+    color: var(--neon-magenta);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-decoration: underline;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.reset-link:hover {
+    opacity: 1;
+}
+
+footer p {
+    font-size: 0.6rem;
+    opacity: 0.4;
+}
+
+@keyframes blink-cursor {
+    from, to { border-right: 1px solid transparent; }
+    50% { border-right: 1px solid var(--neon-green); }
+}
