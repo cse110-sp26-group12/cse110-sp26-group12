@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Simulator 3000</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>AGI SIMULATOR 3000</h1>
+        <p>Burn through compute. Achieve nothing.</p>
+    </div>
+
+    <div class="stats">
+        <div>Tokens: <span id="token-count" class="stat-val">1000</span></div>
+        <div>Hype Level: <span id="hype-val" class="stat-val">Seed Round</span></div>
+    </div>
+
+    <div class="machine">
+        <div class="reels">
+            <div class="reel"><div class="symbol-container" id="reel1"></div></div>
+            <div class="reel"><div class="symbol-container" id="reel2"></div></div>
+            <div class="reel"><div class="symbol-container" id="reel3"></div></div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="spin-btn">GENERATE RESPONSE</button>
+        <div class="log" id="status-msg">Ready to prompt...</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
