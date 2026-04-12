@@ -2,7 +2,7 @@
 
 - **Run ID:** AI-HYPE-V3-FINAL
 - **Timestamp:** 2026-04-12 01:40 AM
-- **Model + version string:** Gemini Pro (Legacy Support)
+- **Model + version string:** Gemini 3 Flash
 - **Input tokens:** ~2,800 (Conversation history + UI debugging screenshots)
 - **Output tokens:** ~1,250 (Full code refactor + reports)
 - **Total tokens:** ~4,055
