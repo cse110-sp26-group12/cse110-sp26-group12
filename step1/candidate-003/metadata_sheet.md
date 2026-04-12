@@ -18,6 +18,6 @@
 - no spinning animation but correctly works as a slot machine
 
 ## Code Quality Notes
-- 
-- 
-- 
+- correctly formatted
+- commented with the functionality of each part
+- clean to read
