@@ -1,0 +1,11 @@
+Refine this existing vanilla web slot machine one more step. Use only HTML, CSS, JavaScript, and standard browser APIs already consistent with the current app. Do not introduce new technologies or external dependencies.
+
+Optimize for a final-candidate level prototype:
+- smooth and understandable gameplay
+- consistent token economy and rules
+- polished UI text and interaction states
+- stronger onboarding so a first-time user immediately understands what to do
+- removal of awkward, redundant, or broken elements
+- code cleanliness, naming, and separation of concerns
+
+Be conservative: improve what is already here instead of reinventing the app. Keep the satire about AI present but not overwhelming. The result should feel small, coherent, and demo-ready in a browser from static files alone. Output the complete revised files only.
