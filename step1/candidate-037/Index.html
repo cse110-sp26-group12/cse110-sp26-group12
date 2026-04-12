@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hype Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>AI HYPE SIMULATOR</h1>
+            <p class="subtitle">Burning GPU credits to generate "intelligence"</p>
+        </header>
+
+        <div class="stats-panel">
+            <div class="stat-item">
+                <span class="label">Compute Credits:</span>
+                <span id="token-count" class="value">500</span>
+            </div>
+            <div class="stat-item">
+                <span class="label">Model Status:</span>
+                <span id="model-status" class="value text-neon">Ready</span>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reel-window">
+                <div class="reel" id="reel1"><div class="symbol-container" id="con1"></div></div>
+                <div class="reel" id="reel2"><div class="symbol-container" id="con2"></div></div>
+                <div class="reel" id="reel3"><div class="symbol-container" id="con3"></div></div>
+                <div class="win-line"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="spin-btn">Inference (Cost: 50)</button>
+            <p id="status-msg" class="message">Ready to disrupt the industry?</p>
+        </div>
+
+        <footer class="footer">
+            <p>* Results generated via stochastic parrots.</p>
+        </footer>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
