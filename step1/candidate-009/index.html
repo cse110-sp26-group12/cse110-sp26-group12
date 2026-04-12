@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Trainer - AI Satirical Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="glitch-bg">
+    <div class="container">
+        <header>
+            <h1>AGI TRAINER <span>v0.1-alpha (Internal Only)</span></h1>
+            <div class="stats">
+                <div class="stat-item">COMPUTE CREDITS: <span id="credits">100</span></div>
+                <div class="stat-item">GPU TEMP: <span id="gpu-temp">45</span>°C</div>
+                <div class="stat-item">MODEL ACCURACY: <span id="accuracy">0.00</span>%</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="slot-machine">
+                <div class="reels">
+                    <div class="reel" id="reel1">
+                        <div class="symbol-container">
+                            <div class="symbol">🤖</div>
+                        </div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="symbol-container">
+                            <div class="symbol">🤖</div>
+                        </div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="symbol-container">
+                            <div class="symbol">🤖</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="spin-btn">TRAIN MODEL (Cost: 5 Credits)</button>
+                </div>
+            </div>
+
+            <div class="message-center">
+                <p id="message">Ready for hyperparameter tuning...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>"Scaling is all you need." — The Singularity Foundation</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
