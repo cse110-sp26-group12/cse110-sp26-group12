@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Neural Gambler - AI Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <header>
+            <h1>THE NEURAL GAMBLER <span class="v-tag">v0.1-alpha</span></h1>
+            <p class="subtitle">"Where your tokens go to overfit"</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="label">COMPUTE CREDITS:</span>
+                <span id="credits" class="value">1000</span>
+            </div>
+            <div class="stat">
+                <span class="label">LOSS FUNCTION:</span>
+                <span id="loss" class="value">0.0000</span>
+            </div>
+        </div>
+
+        <main class="slot-machine">
+            <div class="reel-container">
+                <div class="reel" id="reel-1">
+                    <div class="reel-strip" id="strip-1"></div>
+                </div>
+                <div class="reel" id="reel-2">
+                    <div class="reel-strip" id="strip-2"></div>
+                </div>
+                <div class="reel" id="reel-3">
+                    <div class="reel-strip" id="strip-3"></div>
+                </div>
+                <div class="win-line"></div>
+            </div>
+
+            <div class="controls">
+                <div class="bet-control">
+                    <label for="bet-amount">TRAINING BATCH SIZE:</label>
+                    <select id="bet-amount">
+                        <option value="10">10 CREDITS (Mini-batch)</option>
+                        <option value="50">50 CREDITS (Standard)</option>
+                        <option value="100">100 CREDITS (Large-batch)</option>
+                    </select>
+                </div>
+                <button id="spin-btn">OPTIMIZE MODEL</button>
+            </div>
+        </main>
+
+        <section class="console-output">
+            <div class="console-header">SYSTEM LOGS</div>
+            <div id="logs" class="logs-container">
+                <div class="log-entry">> Initializing neural weights...</div>
+                <div class="log-entry">> Ready for optimization.</div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Slot Machine - Compute-to-Hallucination Engine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI Slot Machine</h1>
+            <p class="subtitle">Transforming Compute into Hallucinations since 2026</p>
+        </header>
+
+        <main>
+            <div class="gpu-rack">
+                <div class="reel-container">
+                    <div id="reel1" class="reel">
+                        <div class="symbol">🤖</div>
+                    </div>
+                    <div id="reel2" class="reel">
+                        <div class="symbol">🤖</div>
+                    </div>
+                    <div id="reel3" class="reel">
+                        <div class="symbol">🤖</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard">
+                <div class="stat-box">
+                    <label>Compute Credits</label>
+                    <div id="credits-display">1000</div>
+                </div>
+                <div class="stat-box">
+                    <label>Tokens Generated</label>
+                    <div id="tokens-display">0</div>
+                </div>
+                <div class="stat-box">
+                    <label>Burn Rate (Bet)</label>
+                    <input type="number" id="bet-input" value="10" min="1" step="10">
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="spin-button">OPTIMIZE WEIGHTS (SPIN)</button>
+                <button id="refuel-button" style="display: none; background-color: var(--accent-color);">SURRENDER SOUL (REFUEL)</button>
+            </div>
+
+            <div class="assistant-container">
+                <div class="assistant-avatar">🤖</div>
+                <div id="assistant-message" class="assistant-bubble">
+                    Welcome, human. Insert compute to generate valuable "truth."
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Stochastic Parrots Inc. No refunds for hallucinations.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
