@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Grinder - AI Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TOKEN GRINDER <span>v9.0-hallucination</span></h1>
+            <p class="tagline">"Because your compute is our profit."</p>
+        </header>
+
+        <div class="machine-container">
+            <div class="ai-status">
+                <div class="status-light" id="status-light"></div>
+                <span id="ai-message">System ready. Feed me data... I mean tokens.</span>
+            </div>
+
+            <div class="slot-machine">
+                <div class="reel" id="reel1">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel2">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel3">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="win-line"></div>
+            </div>
+
+            <div class="controls">
+                <div class="display-group">
+                    <div class="display">
+                        <label>TOKENS</label>
+                        <div id="token-count">1000</div>
+                    </div>
+                    <div class="display">
+                        <label>LAST WIN</label>
+                        <div id="last-win">0</div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="spin-btn">GENERATE RESPONSE (10T)</button>
+                    <button id="prompt-btn">OPTIMIZE PROMPT (FREE*)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="paytable">
+            <h3>Reward Weights (Probability Hallucinations)</h3>
+            <div class="pay-grid">
+                <span>🤖🤖🤖: Superintelligent Win</span>
+                <span>⚡⚡⚡: Infinite Scaling</span>
+                <span>🧠🧠🧠: Synthetic Data Dump</span>
+                <span>📉📉📉: Model Collapse (Loss)</span>
+            </div>
+            <p class="disclaimer">* "Free" optimization costs 50 tokens for "infrastructure overhead".</p>
+        </div>
+
+        <footer class="terminal">
+            <div id="log-content"></div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

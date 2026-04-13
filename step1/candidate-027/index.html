@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Burner - Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI TOKEN <span class="highlight">BURNER</span></h1>
+            <p class="subtitle">Proof of Stake? More like Proof of Waste.</p>
+        </header>
+
+        <main>
+            <div class="terminal" id="terminal">
+                <div class="terminal-line">> Initializing Neural Overlords...</div>
+                <div class="terminal-line">> Scraping the internet for "Originality"...</div>
+                <div class="terminal-line">> Ready to hallucinate some profit.</div>
+            </div>
+
+            <div class="slot-machine">
+                <div class="reels">
+                    <div class="reel" id="reel1"><div class="reel-inner">🤖</div></div>
+                    <div class="reel" id="reel2"><div class="reel-inner">🧠</div></div>
+                    <div class="reel" id="reel3"><div class="reel-inner">☁️</div></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <label>COMPUTE TOKENS</label>
+                        <div id="balance">100</div>
+                    </div>
+                    <div class="stat-box">
+                        <label>CURRENT BET</label>
+                        <div id="bet">10</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="bet-minus" class="btn-secondary">BET -</button>
+                    <button id="spin-btn" class="btn-primary">SPIN (BURN)</button>
+                    <button id="bet-plus" class="btn-secondary">BET +</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with 0% Organic Intelligence. No GPUs were harmed in the making of this UI (mostly).</p>
+        </footer>
+    </div>
+    <div class="modal" id="refill-modal">
+        <div class="modal-content">
+            <h2>OUT OF COMPUTE</h2>
+            <p>Your VC funding has dried up. Your model is a glorified linear regression.</p>
+            <br>
+            <button id="refill-btn" class="btn-primary">REQUEST VENTURE GRANT (+100)</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

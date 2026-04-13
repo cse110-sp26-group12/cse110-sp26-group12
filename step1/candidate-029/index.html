@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI-lot Machine: Optimization Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>AGI-LOT MACHINE</h1>
+            <p class="subtitle">Converting VC Capital into Hallucinations since 2023</p>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="label">COMPUTE TOKENS</span>
+                <span id="token-count" class="value">100</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">VALUATION</span>
+                <span id="valuation" class="value">$0</span>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel-1"><div class="reel-content">🤖</div></div>
+                <div class="reel" id="reel-2"><div class="reel-content">🤖</div></div>
+                <div class="reel" id="reel-3"><div class="reel-content">🤖</div></div>
+            </div>
+            
+            <div class="controls">
+                <button id="spin-btn">RUN INFERENCE (10 TOKENS)</button>
+            </div>
+        </div>
+
+        <div class="console">
+            <div class="console-header">SYSTEM LOGS</div>
+            <div id="logs" class="log-content">
+                <div class="log-entry">Waiting for seed investment...</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Note: Any resemblance to real AGI is purely a hallucination.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

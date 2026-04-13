@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI-Nominator - The Ultimate Token Burner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AGI-Nominator<sup>v0.0.1-alpha</sup></h1>
+            <p class="tagline">"Replacing your logic with expensive tokens since 2023."</p>
+        </header>
+
+        <div class="status-panel">
+            <div class="stat-box">
+                <span class="label">Context Tokens:</span>
+                <span id="token-count">1000</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Hallucination Rate:</span>
+                <span id="hallucination-rate">Low</span>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel1">🤖</div>
+                <div class="reel" id="reel2">🧠</div>
+                <div class="reel" id="reel3">⚡</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="bet-input">
+                <label for="bet">Prompt Intensity:</label>
+                <input type="number" id="bet" value="50" min="1" step="10">
+            </div>
+            <button id="spin-btn">GENERATE RESPONSE</button>
+            <button id="reset-btn" style="background: transparent; border: 1px solid #30363d; margin-top: 5px; font-size: 0.7rem;">RETRAIN MODEL (RESET)</button>
+        </div>
+
+        <div class="output-log">
+            <div class="log-header">System Output:</div>
+            <div id="log-content">Initializing "Universal Truth" weights... Ready.</div>
+        </div>
+
+        <footer>
+            <p>Built with ❤️ and 100% simulated intelligence.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
