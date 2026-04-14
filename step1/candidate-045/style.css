@@ -1,0 +1,179 @@
+:root {
+    --bg-color: #0d0d12;
+    --neon-green: #39ff14;
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --text-color: #e0e0e0;
+    --panel-bg: #1a1a24;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.casino-container {
+    background: var(--panel-bg);
+    border: 3px solid var(--neon-blue);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--neon-blue);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+header h1 {
+    color: var(--neon-pink);
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px var(--bg-color);
+}
+
+.subtitle {
+    color: var(--neon-blue);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.status-panel {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+    background: #000;
+    padding: 1rem;
+    border: 1px dashed var(--neon-green);
+}
+
+.stat .label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--neon-green);
+}
+
+.stat .value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.slot-machine {
+    background: #222;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.reels {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.reel {
+    width: 100px;
+    height: 100px;
+    background: #333;
+    border: 2px solid #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.reel-content {
+    transition: transform 0.1s ease-in-out;
+}
+
+.spinning {
+    animation: blur-spin 0.2s infinite;
+}
+
+@keyframes blur-spin {
+    0% { transform: translateY(-20px) scaleY(1.2); filter: blur(2px); }
+    50% { transform: translateY(20px) scaleY(1.2); filter: blur(5px); }
+    100% { transform: translateY(-20px) scaleY(1.2); filter: blur(2px); }
+}
+
+.main-btn {
+    background: var(--neon-green);
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #28cc11;
+    transition: all 0.1s;
+}
+
+.main-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #28cc11;
+}
+
+.main-btn:disabled {
+    background: #444;
+    box-shadow: none;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.controls {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.controls button {
+    background: transparent;
+    border: 1px solid var(--neon-pink);
+    color: var(--neon-pink);
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.message-area {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    border: 1px solid #333;
+    margin-bottom: 1.5rem;
+    color: var(--neon-green);
+    font-weight: bold;
+}
+
+.payout-table {
+    text-align: left;
+    font-size: 0.8rem;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+}
+
+.payout-table h3 {
+    color: var(--neon-blue);
+    margin: 0 0 0.5rem 0;
+}
+
+.payout-table ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.payout-table li {
+    margin-bottom: 0.2rem;
+}
