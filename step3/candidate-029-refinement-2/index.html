@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI-lot Machine | Venture Capital Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>AGI-LOT <span class="version">v2.0.0</span></h1>
+            <p class="subtitle">Turning GPU Hours into Paper Wealth</p>
+        </header>
+
+        <main>
+            <div class="stats-container">
+                <div class="stat-box" title="Available Compute">
+                    <span class="label">COMPUTE_TOKENS</span>
+                    <span id="token-count" class="value">100</span>
+                </div>
+                <div class="stat-box" title="Paper Valuation">
+                    <span class="label">PAPER_VALUATION</span>
+                    <span id="valuation" class="value">$0M</span>
+                </div>
+            </div>
+
+            <div class="slot-machine" id="machine-body">
+                <div class="reels">
+                    <div class="reel" id="reel-0">
+                        <div class="reel-strip"></div>
+                    </div>
+                    <div class="reel" id="reel-1">
+                        <div class="reel-strip"></div>
+                    </div>
+                    <div class="reel" id="reel-2">
+                        <div class="reel-strip"></div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="spin-btn">RUN INFERENCE (10 TOKENS)</button>
+                    <button id="reset-btn" class="hidden">PIVOT (SEEK SEED FUNDING)</button>
+                </div>
+            </div>
+
+            <div class="console">
+                <div class="console-header">
+                    <span>TERMINAL_LOG</span>
+                    <span id="system-status">● LIVE</span>
+                </div>
+                <div id="logs" class="log-content">
+                    <div class="log-entry log-system">System v2.0.0 initialized. Awaiting user input...</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Disclaimer: Valuations are stochastic hallucinations. Performance metrics are synthetic. All losses are final until the next funding round.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
