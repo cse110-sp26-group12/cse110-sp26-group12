@@ -10,7 +10,7 @@
 - **Tool-reported time (s):** 2m 6s
 - **Files produced:** index.html
 - **Lines of code:** 320
-- **Runs in browser?:** yes / no / partial
+- **Runs in browser?:** yes
 
 ## App Quality Notes
 - Retro 2000's Hacker Look

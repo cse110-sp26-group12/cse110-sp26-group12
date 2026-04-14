@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Burner: AGI Slot Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TOKEN BURNER</h1>
+            <p class="tagline">LLM-0.1: Generating Jackpots (Probability: 0.001%)</p>
+        </header>
+
+        <main class="cabinet">
+            <div class="status-panel">
+                <div class="stat">
+                    <span class="label">GPU CREDITS:</span>
+                    <span id="token-count" class="value">100</span>
+                </div>
+                <div class="stat">
+                    <span class="label">VALIDATION:</span>
+                    <span id="score-count" class="value">0</span>
+                </div>
+            </div>
+
+            <div class="slots-container">
+                <div class="reel" id="reel-1"><div class="reel-content">🤖</div></div>
+                <div class="reel" id="reel-2"><div class="reel-content">⚡</div></div>
+                <div class="reel" id="reel-3"><div class="reel-content">🍄</div></div>
+            </div>
+
+            <div class="terminal">
+                <div id="terminal-log">System initialized... Awaiting GPU budget.</div>
+            </div>
+
+            <div class="controls">
+                <button id="spin-btn">BURN TOKENS (5)</button>
+                <button id="reset-btn" class="secondary">PITCH TO VCs (Reset)</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Warning: Over-training may cause severe hallucinations.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
