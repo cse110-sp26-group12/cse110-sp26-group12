@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Burner | The Ultimate Compute Sink</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI TOKEN <span class="highlight">BURNER</span></h1>
+            <p class="subtitle">Move fast and hallucinate things.</p>
+        </header>
+
+        <main>
+            <div class="terminal" id="terminal">
+                <div class="terminal-line">> System boot...</div>
+                <div class="terminal-line">> Warming up H100s...</div>
+                <div class="terminal-line">> Ready to burn VC cash.</div>
+            </div>
+
+            <div class="slot-machine">
+                <div class="reels">
+                    <div class="reel" id="reel1">
+                        <div class="reel-strip">
+                            <div class="symbol">🤖</div>
+                        </div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="reel-strip">
+                            <div class="symbol">🧠</div>
+                        </div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="reel-strip">
+                            <div class="symbol">☁️</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <label>COMPUTE TOKENS</label>
+                        <div id="balance">100</div>
+                    </div>
+                    <div class="stat-box">
+                        <label>CURRENT BET</label>
+                        <div id="bet">10</div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="bet-controls">
+                        <button id="bet-minus" class="btn-sm" title="Decrease Bet">-10</button>
+                        <button id="bet-max" class="btn-sm" title="Max Bet">MAX</button>
+                        <button id="bet-plus" class="btn-sm" title="Increase Bet">+10</button>
+                    </div>
+                    <button id="spin-btn" class="btn-primary">BURN TOKENS</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Non-existent AI Lab. No privacy was respected in the training of this slot machine.</p>
+        </footer>
+    </div>
+
+    <div class="modal" id="refill-modal">
+        <div class="modal-content">
+            <h2>MODEL COLLAPSED</h2>
+            <p>Your tokens have been depleted. The model is now just a nested IF-ELSE statement.</p>
+            <div class="modal-actions">
+                <button id="refill-btn" class="btn-primary">SECURE SEED ROUND (+100)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

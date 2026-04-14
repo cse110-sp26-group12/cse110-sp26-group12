@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Slot Machine - Token Burner 3000</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GENESIS <span>PROMPT</span></h1>
+            <div class="subtitle">SYNTHESIZING VALUE IN THE LATENT SPACE</div>
+        </header>
+
+        <div class="machine-wrapper">
+            <div class="status-panel">
+                <div class="status-item">
+                    <label>CONTEXT WINDOW (TOKENS)</label>
+                    <div id="token-balance">1000</div>
+                </div>
+                <div class="status-item">
+                    <label>INFERENCE COST (BET)</label>
+                    <div id="bet-amount">10</div>
+                </div>
+            </div>
+
+            <div class="slot-machine">
+                <div class="reels">
+                    <div class="reel" id="reel1">
+                        <div class="reel-container"></div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="reel-container"></div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="reel-container"></div>
+                    </div>
+                </div>
+                <div class="win-line"></div>
+            </div>
+
+            <div class="log-display" id="log-display">
+                <div class="log-line">> SYSTEM READY...</div>
+                <div class="log-line">> WAITING FOR SEED...</div>
+            </div>
+
+            <div class="controls">
+                <button id="compute-btn" class="primary-btn">COMPUTE INFERENCE</button>
+                <div class="bet-controls">
+                    <button id="bet-down" aria-label="Decrease bet">-</button>
+                    <span class="bet-label">BURN RATE</span>
+                    <button id="bet-up" aria-label="Increase bet">+</button>
+                    <button id="max-bet" class="secondary-btn">MAX</button>
+                </div>
+                <button id="reset-btn" class="reset-btn hidden">REQUEST VC FUNDING</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>Warning: Prolonged usage may result in model collapse, existential dread, or 402 Payment Required errors.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

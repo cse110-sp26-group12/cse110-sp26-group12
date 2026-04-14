@@ -1,0 +1,301 @@
+:root {
+    --neon-green: #00ff41;
+    --neon-blue: #00d4ff;
+    --neon-pink: #ff00ff;
+    --dark-bg: #0a0a0f;
+    --panel-bg: #1a1a2e;
+    --text-color: #e0e0ff;
+    --reel-bg: #050510;
+    --symbol-height: 100px; /* Reduced from 120px for more compact feel */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Segoe UI', 'Ubuntu', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 480px;
+    padding: 30px;
+    background: var(--panel-bg);
+    border: 2px solid var(--neon-blue);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+header h1 span {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+.subtitle {
+    font-size: 0.7rem;
+    color: #6a6a9d;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status-panel {
+    display: flex;
+    justify-content: space-around;
+    background: #050510;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #333;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+.status-item label {
+    display: block;
+    font-size: 0.65rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+#token-balance, #bet-amount {
+    font-size: 1.6rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: var(--neon-green);
+    text-shadow: 0 0 8px var(--neon-green);
+}
+
+.slot-machine {
+    background: #000;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 4px solid #222;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.reels {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.reel {
+    width: 110px;
+    height: var(--symbol-height);
+    background: var(--reel-bg);
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 15px rgba(0,0,0,1);
+}
+
+.reel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.symbol {
+    height: var(--symbol-height);
+    width: 100%;
+    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.symbol.winner {
+    animation: pulse 0.5s infinite alternate;
+    text-shadow: 0 0 20px gold;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.1); opacity: 0.8; }
+}
+
+.win-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 0, 255, 0.3);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.log-display {
+    background: #050510;
+    color: var(--neon-green);
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    height: 70px;
+    border: 1px solid #004400;
+    margin-bottom: 25px;
+    font-size: 0.8rem;
+    overflow-y: hidden;
+    text-align: left;
+    position: relative;
+}
+
+/* CRT Scanline Effect */
+.log-display::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+}
+
+.log-line {
+    margin: 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.primary-btn {
+    background: linear-gradient(45deg, #00d4ff, #ff00ff);
+    border: none;
+    color: white;
+    padding: 18px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.primary-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 255, 0.5);
+}
+
+.primary-btn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.primary-btn:disabled {
+    background: #333;
+    color: #666;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.bet-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.bet-controls button {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #2a2a40;
+    color: white;
+    border: 1px solid #444;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.bet-controls button:hover:not(:disabled) {
+    background: #3a3a5a;
+    border-color: var(--neon-blue);
+}
+
+.secondary-btn {
+    width: auto !important;
+    padding: 0 15px !important;
+    font-size: 0.7rem !important;
+}
+
+.reset-btn {
+    background: transparent;
+    border: 1px dashed var(--neon-pink);
+    color: var(--neon-pink);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.reset-btn:hover {
+    background: rgba(255, 0, 255, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.bet-label {
+    font-size: 0.7rem;
+    color: #888;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+footer {
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 0.65rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Animations */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10px { transform: translate(-1px, -2px) rotate(-1deg); }
+    20px { transform: translate(-3px, 0px) rotate(1deg); }
+}
+
+.shake {
+    animation: shake 0.5s;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Grinder: The Hallucinator 9000</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="container">
+        <header>
+            <h1>AI TOKEN GRINDER</h1>
+            <div class="status-bar">
+                <span class="status-label">INTEL_VERIFICATION:</span>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <span id="progress-text" class="status-value">0%</span>
+            </div>
+        </header>
+
+        <main class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel-0">
+                    <div class="reel-strip" id="strip-0"></div>
+                </div>
+                <div class="reel" id="reel-1">
+                    <div class="reel-strip" id="strip-1"></div>
+                </div>
+                <div class="reel" id="reel-2">
+                    <div class="reel-strip" id="strip-2"></div>
+                </div>
+            </div>
+            
+            <div class="dashboard">
+                <div class="stat-group">
+                    <div class="stat">
+                        <span class="label">GPU_TOKENS</span>
+                        <span id="token-count" class="value">100</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">HYPE_LEVEL</span>
+                        <span id="hype-level" class="value">STABLE</span>
+                    </div>
+                </div>
+                <div class="action-group">
+                    <button id="spin-button">BURN 10 TOKENS</button>
+                    <button id="reset-button" class="hidden">REQUEST SERIES A</button>
+                </div>
+            </div>
+        </main>
+
+        <section class="terminal">
+            <div class="terminal-header">
+                <span>SYSTEM_LOG.txt</span>
+                <span id="timestamp">12:00:00</span>
+            </div>
+            <div id="log-content" class="log-content"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
