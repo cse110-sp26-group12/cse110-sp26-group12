@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM: Large Luck Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="container">
+        <header>
+            <h1>LLM: <span class="accent">Large Luck Machine</span></h1>
+            <p class="subtitle">AI-Assisted Wealth Generation Protocol v4.0</p>
+        </header>
+
+        <main class="slot-machine">
+            <div class="display-panel">
+                <div class="stat">
+                    <span class="label">PROMPT TOKENS</span>
+                    <span id="token-balance" class="value">1000</span>
+                </div>
+                <div class="stat">
+                    <span class="label">INFERENCE COST</span>
+                    <span id="bet-amount" class="value">50</span>
+                </div>
+            </div>
+
+            <div class="reels-container">
+                <div class="reel" id="reel-1">
+                    <div class="strip"></div>
+                </div>
+                <div class="reel" id="reel-2">
+                    <div class="strip"></div>
+                </div>
+                <div class="reel" id="reel-3">
+                    <div class="strip"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="generate-btn" class="main-btn">GENERATE RESPONSE</button>
+            </div>
+
+            <div class="status-console">
+                <div id="console-log" class="log-entries">
+                    <div class="log-entry">> System initialized. Ready for prompt injection.</div>
+                    <div class="log-entry">> Safety guardrails active. Ethics module: ENABLED.</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 OpenAI (Original Profit Earning Artificial Intelligence)</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
