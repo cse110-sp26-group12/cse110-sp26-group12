@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Sink - Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="AI TOKEN SINK">AI TOKEN SINK</h1>
+            <p class="subtitle">Burning GPUs since 2024</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span class="label">COMPUTE TOKENS:</span>
+                <span id="token-count" class="value">1000</span>
+            </div>
+            <div id="status-message" class="status">IDLE - READY FOR INFERENCE</div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reel-container">
+                <div id="reel-1" class="reel">
+                    <div class="reel-strip"></div>
+                </div>
+                <div id="reel-2" class="reel">
+                    <div class="reel-strip"></div>
+                </div>
+                <div id="reel-3" class="reel">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="overlay"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="spin-button" class="btn-primary">GENERATE (10 TOKENS)</button>
+            <button id="reset-button" class="btn-secondary">RESET CLUSTER</button>
+        </div>
+
+        <div class="legend">
+            <h3>Reward Matrix (Probability & Tokens)</h3>
+            <ul>
+                <li>🧠 🧠 🧠 - AGI FOUND! (+500 Tokens)</li>
+                <li>🤖 🤖 🤖 - STOCHASTIC PARROT (+100 Tokens)</li>
+                <li>📈 📈 📈 - OVERFITTING (+50 Tokens)</li>
+                <li>🫠 🫠 🫠 - HALLUCINATION (Refund 10 Tokens)</li>
+                <li> Any 3 Mix - EDGE CASE (No Reward)</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

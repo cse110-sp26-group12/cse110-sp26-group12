@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Token Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="terminal-container">
+        <header>
+            <h1>GENESIS-SLOT-V1.0</h1>
+            <div id="token-display">TOKENS: <span id="token-count">1000</span></div>
+        </header>
+
+        <main>
+            <div class="slot-machine">
+                <div class="reel-container">
+                    <div id="reel-1" class="reel">
+                        <div class="symbol">🤖</div>
+                    </div>
+                </div>
+                <div class="reel-container">
+                    <div id="reel-2" class="reel">
+                        <div class="symbol">🧠</div>
+                    </div>
+                </div>
+                <div class="reel-container">
+                    <div id="reel-3" class="reel">
+                        <div class="symbol">🍄</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="spin-button">EXECUTE COMPUTE (50T)</button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="status-box">
+                <span id="status-text">INITIALIZING CONTEXT...</span><span class="cursor">_</span>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
