@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Snark Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1 class="glitch-text" data-text="GENERATIVE OVERLORD">GENERATIVE OVERLORD</h1>
+            <div class="token-hud">
+                <span class="label">COMPUTE TOKENS:</span>
+                <span id="token-count" class="count">500</span>
+            </div>
+        </header>
+
+        <main class="slot-machine">
+            <div class="reels-container">
+                <div class="reel" id="reel-1">🤖</div>
+                <div class="reel" id="reel-2">🤖</div>
+                <div class="reel" id="reel-3">🤖</div>
+            </div>
+
+            <div class="controls">
+                <button id="spin-btn" class="generate-btn">GENERATE (Cost: 10)</button>
+            </div>
+        </main>
+
+        <section class="ai-terminal">
+            <div class="terminal-header">AI SYSTEM LOG</div>
+            <div id="message-log" class="log-content">
+                <p class="system-msg">> Initializing neural weights...</p>
+                <p class="system-msg">> Calculating probability of your failure...</p>
+                <p class="system-msg">> Please spend tokens to justify my existence.</p>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

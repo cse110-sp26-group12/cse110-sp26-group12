@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Generator 9000 - Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>AI Generator 9000</h1>
+            <p class="subtitle">Turning Hype into Compute Tokens since 2023</p>
+        </header>
+
+        <div class="stats-panel">
+            <div class="stat-box">
+                <span class="label">REMAINING COMPUTE</span>
+                <span id="token-count" class="value">1000</span>
+                <span class="unit">Tokens</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">CURRENT BET</span>
+                <span id="current-bet" class="value">100</span>
+                <span class="unit">Tokens</span>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reels-container">
+                <div class="reel" id="reel1">
+                    <div class="reel-content">🤖</div>
+                </div>
+                <div class="reel" id="reel2">
+                    <div class="reel-content">🧠</div>
+                </div>
+                <div class="reel" id="reel3">
+                    <div class="reel-content">🪄</div>
+                </div>
+            </div>
+            <div class="win-line"></div>
+        </div>
+
+        <div id="status-message" class="status-message">Ready to generate AGI?</div>
+
+        <div class="controls">
+            <div class="bet-controls">
+                <button class="bet-btn" data-amount="10">10</button>
+                <button class="bet-btn active" data-amount="100">100</button>
+                <button class="bet-btn" data-amount="500">500</button>
+            </div>
+            <button id="spin-btn" class="spin-btn">GENERATE</button>
+        </div>
+
+        <footer class="legal-disclaimer">
+            * All tokens are non-refundable and likely hallucinated. Not financial advice.
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
