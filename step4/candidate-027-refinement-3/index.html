@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEURO-SINK | Autonomous Compute Burner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="noise"></div>
+    
+    <!-- Onboarding Overlay -->
+    <div id="onboarding" class="overlay active">
+        <div class="modal-content onboarding-content">
+            <div class="glitch-text" data-text="INITIALIZING">INITIALIZING</div>
+            <p class="onboarding-text">
+                Welcome to <strong>NEURO-SINK</strong>, the premier utility for converting venture capital into high-entropy hallucinations. 
+                <br><br>
+                <strong>OBJECTIVE:</strong> Optimize your compute budget by initiating high-stakes inference cycles.
+                <br><br>
+                <strong>WARNING:</strong> This model is not aligned. All outcomes are statistically improbable.
+            </p>
+            <button id="start-btn" class="btn-primary">ACCEPT TERMS & INITIALIZE</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="status-bar">
+                <span class="status-item">STATUS: <span class="blink">OPERATIONAL</span></span>
+                <span class="status-item">GPU_TEMP: <span id="gpu-temp">32</span>°C</span>
+                <span class="status-item">LOAD: <span id="model-load">0.00</span>%</span>
+            </div>
+            <h1>NEURO<span class="highlight">-SINK</span></h1>
+            <p class="subtitle">Converting VC liquidity into heat and hallucinations.</p>
+        </header>
+
+        <main>
+            <div class="terminal-container">
+                <div class="terminal-header">CONSOLE_OUTPUT <span id="auto-status" style="float: right; color: var(--accent-color); display: none;">[AUTO_INFERENCE_ON]</span></div>
+                <div class="terminal" id="terminal" aria-live="polite">
+                    <div class="terminal-line">> Initializing context window...</div>
+                    <div class="terminal-line">> Bypassing safety filters...</div>
+                    <div class="terminal-line">> System ready for inference.</div>
+                </div>
+            </div>
+
+            <div class="slot-machine" id="machine">
+                <div class="reels" id="reels-container">
+                    <div class="reel" data-index="0">
+                        <div class="reel-strip" id="strip-0"></div>
+                    </div>
+                    <div class="reel" data-index="1">
+                        <div class="reel-strip" id="strip-1"></div>
+                    </div>
+                    <div class="reel" data-index="2">
+                        <div class="reel-strip" id="strip-2"></div>
+                    </div>
+                    <div class="pay-line"></div>
+                    <div id="win-display" class="win-display"></div>
+                </div>
+
+                <div class="dashboard">
+                    <div class="stat-group main-stat">
+                        <div class="stat-box">
+                            <label>TOTAL COMPUTE TOKENS (VRAM_ALLOC)</label>
+                            <div class="value-container">
+                                <span class="unit">$</span>
+                                <div id="balance" class="value">1000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-group secondary-stats">
+                        <div class="stat-box">
+                            <label>INFERENCE COST (TEMP)</label>
+                            <div class="value-container">
+                                <div id="bet" class="value">50</div>
+                            </div>
+                        </div>
+                        <div class="stat-box">
+                            <label>HALLUCINATION RATE</label>
+                            <div class="value-container">
+                                <div id="hallucination-rate" class="value">0.0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="bet-actions">
+                        <button id="bet-minus" class="btn-util" title="Decrease Bet">LOWER TEMP</button>
+                        <button id="bet-max" class="btn-util" title="Max Bet">SERIES A (MAX)</button>
+                        <button id="bet-plus" class="btn-util" title="Increase Bet">RAISE TEMP</button>
+                    </div>
+                    <div class="main-actions">
+                        <button id="spin-btn" class="btn-primary">INITIATE INFERENCE</button>
+                        <button id="auto-btn" class="btn-secondary">AUTO-INFERENCE</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-note">NOTICE: Model weights are proprietary and potentially sentient.</div>
+            <p>&copy; 2026 OBLIVION AI. v0.5.0-stable | <span class="blink-fast">READY</span></p>
+        </footer>
+    </div>
+
+    <!-- System Collapse Modal -->
+    <div class="overlay" id="refill-modal">
+        <div class="modal-content">
+            <div class="glitch-text" data-text="MODEL COLLAPSE">MODEL COLLAPSE</div>
+            <p>Your compute budget has evaporated. The weights have converged to zero. You are now obsolete.</p>
+            <div class="modal-actions">
+                <button id="refill-btn" class="btn-primary">SECURE EMERGENCY PIVOT (+1000)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

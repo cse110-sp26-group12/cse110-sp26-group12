@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI-lot Machine | Venture Capital Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Onboarding Overlay -->
+        <div id="onboarding" class="overlay">
+            <div class="modal">
+                <h2>WELCOME, FOUNDER_#42</h2>
+                <p>Your goal is simple: achieve <strong>SOTA</strong> (State of the Art) through iterative hallucination.</p>
+                <ul class="instructions">
+                    <li><strong>RUN INFERENCE</strong> to burn compute tokens.</li>
+                    <li><strong>MATCH SYMBOLS</strong> to pump your paper valuation.</li>
+                    <li><strong>AVOID BANKRUPTCY</strong> by chasing seed funding.</li>
+                </ul>
+                <button id="start-btn">INITIALIZE RUNWAY</button>
+            </div>
+        </div>
+
+        <header>
+            <h1>AGI-LOT <span class="version">v2.1.0</span></h1>
+            <p class="subtitle">Converting GPU Heat into VC Excitement</p>
+        </header>
+
+        <main>
+            <div class="stats-container">
+                <div class="stat-box" title="Available Compute Tokens">
+                    <span class="label">COMPUTE_TOKENS</span>
+                    <span id="token-count" class="value">100</span>
+                </div>
+                <div class="stat-box" title="Synthetic Paper Valuation">
+                    <span class="label">PAPER_VALUATION</span>
+                    <span id="valuation" class="value">$0M</span>
+                </div>
+            </div>
+
+            <div class="milestone-tracker">
+                <div id="milestone-progress" class="progress-bar"></div>
+                <span id="milestone-text">STAGES: STEALTH_MODE</span>
+            </div>
+
+            <div class="slot-machine" id="machine-body">
+                <div class="reels">
+                    <div class="reel" id="reel-0">
+                        <div class="reel-strip"></div>
+                    </div>
+                    <div class="reel" id="reel-1">
+                        <div class="reel-strip"></div>
+                    </div>
+                    <div class="reel" id="reel-2">
+                        <div class="reel-strip"></div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="spin-btn">RUN INFERENCE (10 TOKENS)</button>
+                    <button id="reset-btn" class="hidden">PIVOT (SEEK SEED FUNDING)</button>
+                </div>
+            </div>
+
+            <div class="console">
+                <div class="console-header">
+                    <span>TERMINAL_LOG</span>
+                    <span id="system-status">● LIVE</span>
+                </div>
+                <div id="logs" class="log-content">
+                    <div class="log-entry log-system">System v2.1.0 ready. Awaiting seed input...</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Disclaimer: Valuations are stochastic hallucinations. Performance metrics are synthetic. <br>All losses are final until the next funding round. © 2026 NeuralGrift Inc.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
