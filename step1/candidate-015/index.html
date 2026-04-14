@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Slot Optimizer - AGI or Bust</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SaaS Slot Optimizer <span>v4.0 (Alpha)</span></h1>
+            <p class="subtitle">Burning capital to find AGI.</p>
+        </header>
+
+        <main class="slot-machine">
+            <div class="status-bar">
+                <div class="metric">
+                    <span class="label">Compute Credits</span>
+                    <span id="balance" class="value">100</span>
+                </div>
+                <div class="metric">
+                    <span class="label">GPU Temp</span>
+                    <span id="gpu-temp" class="value">42°C</span>
+                </div>
+                <div class="metric">
+                    <span class="label">Token Burn</span>
+                    <span class="value">1 / spin</span>
+                </div>
+            </div>
+
+            <div class="reels-container">
+                <div class="reels-mask">
+                    <div id="reel-1" class="reel"></div>
+                    <div id="reel-2" class="reel"></div>
+                    <div id="reel-3" class="reel"></div>
+                </div>
+                <div class="win-line"></div>
+            </div>
+
+            <div class="controls">
+                <button id="spin-btn" class="primary-btn">OPTIMIZE</button>
+            </div>
+
+            <div id="satire-log" class="log-window">
+                <div class="log-entry">Waiting for inference...</div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 FutureCorp AI. "Hallucinations are just creative features."</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
