@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venture Capital Simulator: AI Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">🚀 VC-Sim <span class="badge">Enterprise</span></div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="label">Compute Tokens</span>
+                    <span id="token-count" class="value">1000</span>
+                </div>
+                <div class="stat-item">
+                    <span class="label">Total Valuation</span>
+                    <span id="valuation" class="value">$0</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="slot-machine">
+                <div class="reels-container">
+                    <div class="reel" id="reel-1">
+                        <div class="reel-strip"></div>
+                    </div>
+                    <div class="reel" id="reel-2">
+                        <div class="reel-strip"></div>
+                    </div>
+                    <div class="reel" id="reel-3">
+                        <div class="reel-strip"></div>
+                    </div>
+                    <div class="win-line"></div>
+                </div>
+
+                <div class="controls">
+                    <div class="status-display" id="status-text">Ready to disrupt the market...</div>
+                    <button id="spin-btn" class="primary-btn">Deploy Model (50 Tokens)</button>
+                </div>
+            </section>
+
+            <section class="info-panel">
+                <h3>Payout Table</h3>
+                <ul class="payout-list">
+                    <li><span>🦄 🦄 🦄</span> <span>Unicorn Status: 5000 Tokens</span></li>
+                    <li><span>🤖 🤖 🤖</span> <span>SOTA Model: 1000 Tokens</span></li>
+                    <li><span>🧠 🧠 🧠</span> <span>Neural Edge: 500 Tokens</span></li>
+                    <li><span>📈 📈 📈</span> <span>Growth Hack: 250 Tokens</span></li>
+                    <li><span>💸 💸 💸</span> <span>Series B Funding: 100 Tokens</span></li>
+                    <li><span>Any 3 Mixed</span> <span>"Synergy": 25 Tokens</span></li>
+                </ul>
+            </section>
+        </main>
+
+        <div id="toast-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

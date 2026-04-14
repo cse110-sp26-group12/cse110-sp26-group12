@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Satire Slot Machine - "Token Burner"</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --terminal-green: #2ea043;
+            --terminal-red: #f85149;
+            --text-color: #c9d1d9;
+            --border-color: #30363d;
+            --accent-color: #58a6ff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            border: 2px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 8px;
+            background: #161b22;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: var(--terminal-green);
+            margin: 0;
+        }
+
+        .stats {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+
+        #token-balance {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .slot-machine {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 2rem;
+            perspective: 1000px;
+        }
+
+        .reel {
+            width: 80px;
+            height: 120px;
+            border: 2px solid var(--border-color);
+            background: #0d1117;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reel-inner {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.1s linear;
+        }
+
+        .symbol {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        button {
+            background: var(--terminal-green);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-family: inherit;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s, transform 0.1s;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        button:hover:not(:disabled) {
+            background: #3fb950;
+        }
+
+        button:active:not(:disabled) {
+            transform: scale(0.98);
+        }
+
+        button:disabled {
+            background: #21262d;
+            color: #484f58;
+            cursor: not-allowed;
+        }
+
+        #message-area {
+            margin-top: 1.5rem;
+            min-height: 3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.4;
+        }
+
+        .win-msg { color: var(--terminal-green); }
+        .loss-msg { color: var(--terminal-red); }
+        .info-msg { color: var(--accent-color); }
+
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            pointer-events: none;
+            animation: scanline 6s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100%; }
+        }
+
+        .spinning {
+            animation: blur 0.1s infinite;
+        }
+
+        @keyframes blur {
+            0% { filter: blur(0px); }
+            50% { filter: blur(5px); }
+            100% { filter: blur(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="container">
+        <header>
+            <h1>TOKEN BURNER v1.0.4-beta</h1>
+            <p style="font-size: 0.8rem; opacity: 0.7;">Simulation of Venture Capital Pumping</p>
+        </header>
+
+        <div class="stats">
+            CONTEXT TOKENS: <span id="token-balance">1000</span>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reel" id="reel1"><div class="reel-inner" id="inner1">🤖</div></div>
+            <div class="reel" id="reel2"><div class="reel-inner" id="inner2">🤖</div></div>
+            <div class="reel" id="reel3"><div class="reel-inner" id="inner3">🤖</div></div>
+        </div>
+
+        <div class="controls">
+            <button id="spin-button">Run Inference (-100 Tokens)</button>
+            <div id="message-area">Initialized. Ready for training data.</div>
+        </div>
+    </div>
+
+    <script>
+        const symbols = ['🧠', '💸', '🤖', '🗑️', '📉'];
+        const payouts = {
+            '🧠': { name: 'AGI Achieved!', amount: 1000 },
+            '💸': { name: 'VC Funding Secured!', amount: 2000 },
+            '🤖': { name: 'Hallucination Jackpot!', amount: 500 },
+            '🗑️': { name: 'Garbage In, Garbage Out!', amount: 10 },
+            '📉': { name: 'Model Drift Detected', amount: 0 }
+        };
+
+        let balance = 1000;
+        const COST_PER_SPIN = 100;
+
+        const balanceDisplay = document.getElementById('token-balance');
+        const spinButton = document.getElementById('spin-button');
+        const messageArea = document.getElementById('message-area');
+        const reelelements = [
+            document.getElementById('inner1'),
+            document.getElementById('inner2'),
+            document.getElementById('inner3')
+        ];
+
+        function updateBalance(newBalance) {
+            balance = newBalance;
+            balanceDisplay.textContent = balance;
+            if (balance < COST_PER_SPIN) {
+                spinButton.disabled = true;
+                spinButton.textContent = "Rate Limit Exceeded";
+                showMessage("Rate limit exceeded. Please upgrade to Pro or secure more VC funding.", "loss-msg");
+            }
+        }
+
+        function showMessage(msg, className) {
+            messageArea.textContent = msg;
+            messageArea.className = className;
+        }
+
+        async function spin() {
+            if (balance < COST_PER_SPIN) return;
+
+            updateBalance(balance - COST_PER_SPIN);
+            spinButton.disabled = true;
+            showMessage("Inference running... Processing latent space...", "info-msg");
+
+            const results = [];
+            const spinDurations = [1000, 1500, 2000];
+            
+            // Add animation classes
+            reelelements.forEach(reel => reel.parentElement.classList.add('spinning'));
+
+            // Start spinning effect (just visual noise)
+            const intervals = reelelements.map(reel => {
+                return setInterval(() => {
+                    reel.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                }, 50);
+            });
+
+            // Stop each reel at staggered times
+            for (let i = 0; i < 3; i++) {
+                await new Promise(resolve => setTimeout(resolve, spinDurations[i] - (i > 0 ? spinDurations[i-1] : 0)));
+                clearInterval(intervals[i]);
+                const finalSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+                results[i] = finalSymbol;
+                reelelements[i].textContent = finalSymbol;
+                reelelements[i].parentElement.classList.remove('spinning');
+            }
+
+            calculateResult(results);
+            if (balance >= COST_PER_SPIN) {
+                spinButton.disabled = false;
+            }
+        }
+
+        function calculateResult(results) {
+            const [s1, s2, s3] = results;
+            
+            if (s1 === s2 && s2 === s3) {
+                const win = payouts[s1];
+                updateBalance(balance + win.amount);
+                showMessage(`${win.name} +${win.amount} Tokens!`, "win-msg");
+            } else if (s1 === '📉' || s2 === '📉' || s3 === '📉') {
+                showMessage("Model drift detected. Weights optimized (for the house).", "loss-msg");
+            } else {
+                const randomLossMessages = [
+                    "Loss function too high. Epoch failed.",
+                    "Overfitting detected. Rewriting model.",
+                    "Dataset corrupted by internet trolls.",
+                    "Token context window exceeded. Error 429.",
+                    "GPU memory fragmentation. Try again."
+                ];
+                showMessage(randomLossMessages[Math.floor(Math.random() * randomLossMessages.length)], "");
+            }
+        }
+
+        spinButton.addEventListener('click', spin);
+    </script>
+</body>
+</html>
