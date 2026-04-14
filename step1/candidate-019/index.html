@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Slot Machine - Token Burner 3000</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GENESIS <span>PROMPT</span></h1>
+            <div class="subtitle">The Last Token You'll Ever Need</div>
+        </header>
+
+        <div class="machine-wrapper">
+            <div class="status-panel">
+                <div class="status-item">
+                    <label>CONTEXT WINDOW</label>
+                    <div id="token-balance">1000</div>
+                </div>
+                <div class="status-item">
+                    <label>INFERENCE COST</label>
+                    <div id="bet-amount">10</div>
+                </div>
+            </div>
+
+            <div class="slot-machine">
+                <div class="reels">
+                    <div class="reel" id="reel1">
+                        <div class="reel-container">
+                            <div class="symbol">🤖</div>
+                        </div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="reel-container">
+                            <div class="symbol">🧠</div>
+                        </div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="reel-container">
+                            <div class="symbol">💾</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="log-display" id="log-display">
+                WAITING FOR SEED...
+            </div>
+
+            <div class="controls">
+                <button id="compute-btn" class="primary-btn">COMPUTE</button>
+                <div class="bet-controls">
+                    <button id="bet-down">-</button>
+                    <span class="bet-label">BURN RATE</span>
+                    <button id="bet-up">+</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Warning: Prolonged usage may result in model collapse or existential dread.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
