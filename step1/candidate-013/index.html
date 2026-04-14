@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HYPE MACHINE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1 class="glitch-text">AI HYPE MACHINE</h1>
+            <div class="status-bar">
+                <div class="stat">COMPUTE CREDITS: <span id="credit-display">1000</span></div>
+                <div class="stat">GPU UTILIZATION: <span id="gpu-display">0%</span></div>
+            </div>
+        </header>
+
+        <main class="slot-machine">
+            <div class="reel-container">
+                <div class="reel" id="reel-1">
+                    <div class="reel-strip">
+                        <!-- Symbols will be injected by JS -->
+                    </div>
+                </div>
+                <div class="reel" id="reel-2">
+                    <div class="reel-strip">
+                        <!-- Symbols will be injected by JS -->
+                    </div>
+                </div>
+                <div class="reel" id="reel-3">
+                    <div class="reel-strip">
+                        <!-- Symbols will be injected by JS -->
+                    </div>
+                </div>
+                <div class="win-line"></div>
+            </div>
+
+            <div class="controls">
+                <div class="bet-control">
+                    <label>BET PER INFERENCE:</label>
+                    <input type="number" id="bet-input" value="10" min="1" step="5">
+                </div>
+                <button id="spin-button">RUN INFERENCE</button>
+                <div class="auto-optimize">
+                    <input type="checkbox" id="auto-spin">
+                    <label for="auto-spin">AUTO-OPTIMIZE (AUTO-SPIN)</label>
+                </div>
+            </div>
+        </main>
+
+        <section class="terminal">
+            <h3>INFERENCE LOGS</h3>
+            <div id="log-output">
+                <p>> System initialized...</p>
+                <p>> Raising $7T for compute...</p>
+                <p>> Scrapping the internet for training data...</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>DISCLAIMER: "AGI" IS ALWAYS 6 MONTHS AWAY. NO REFUNDS FOR HALLUCINATIONS.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

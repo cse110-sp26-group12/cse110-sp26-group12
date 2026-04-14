@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The VC Pivot - AI Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <header class="terminal-header">
+            <div class="status-bar">
+                <span id="balance-display">BALANCE: 1000 CT</span>
+                <span id="singularity-progress">SINGULARITY: 0%</span>
+            </div>
+            <h1>THE VC PIVOT</h1>
+            <p class="subtitle">Burning tokens since Series A.</p>
+        </header>
+
+        <main class="slot-machine">
+            <div class="reel-container">
+                <div class="reel" id="reel1">🤖</div>
+                <div class="reel" id="reel2">🤖</div>
+                <div class="reel" id="reel3">🤖</div>
+            </div>
+
+            <div class="controls">
+                <div class="bet-control">
+                    <label for="bet-amount">BET (CT):</label>
+                    <input type="number" id="bet-amount" value="10" min="1" max="100">
+                </div>
+                <button id="spin-button">SPIN (BURN TOKENS)</button>
+            </div>
+        </main>
+
+        <section class="status-log">
+            <div class="log-header">SYSTEM LOG</div>
+            <div id="log-content" class="log-content">
+                <div class="log-entry">> Initializing model...</div>
+                <div class="log-entry">> Connecting to GPU cluster...</div>
+                <div class="log-entry">> Ready for training (spinning).</div>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
