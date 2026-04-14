@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI-LOT | NeuralGrift VC Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Onboarding Overlay -->
+        <div id="onboarding" class="overlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <span class="status-dot pulse"></span>
+                    AUTHENTICATING FOUNDER_#42...
+                </div>
+                <h2>AGI-LOT <span class="version">v2.1.0</span></h2>
+                <p>Welcome to the <strong>NeuralGrift Accelerator</strong>. Your objective: achieve <strong>SOTA</strong> through strategic hallucination.</p>
+                <div class="instructions-card">
+                    <div class="instr-item">
+                        <span class="icon">⚡</span>
+                        <div><strong>RUN INFERENCE</strong><br><small>Burn compute to generate outputs.</small></div>
+                    </div>
+                    <div class="instr-item">
+                        <span class="icon">📈</span>
+                        <div><strong>PUMP VALUATION</strong><br><small>Match patterns to attract VCs.</small></div>
+                    </div>
+                    <div class="instr-item">
+                        <span class="icon">🏦</span>
+                        <div><strong>AVOID BANKRUPTCY</strong><br><small>Pivot when compute hits zero.</small></div>
+                    </div>
+                </div>
+                <button id="start-btn">INITIALIZE RUNWAY</button>
+            </div>
+        </div>
+
+        <header>
+            <div class="brand">
+                <h1>AGI-LOT</h1>
+                <span class="badge">SOTA_MODE</span>
+            </div>
+            <p class="subtitle">"Where Stochastic Parrots become Unicorns"</p>
+        </header>
+
+        <main>
+            <div class="stats-container">
+                <div class="stat-box" id="stat-tokens">
+                    <span class="label">COMPUTE_TOKENS</span>
+                    <div class="value-container">
+                        <span id="token-count" class="value">100</span>
+                        <span class="unit">GHz</span>
+                    </div>
+                </div>
+                <div class="stat-box" id="stat-valuation">
+                    <span class="label">PAPER_VALUATION</span>
+                    <div class="value-container">
+                        <span class="unit">$</span>
+                        <span id="valuation" class="value">0</span>
+                        <span class="unit">M</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="milestone-container">
+                <div class="milestone-info">
+                    <span id="milestone-text">STAGE: STEALTH_MODE</span>
+                    <span id="milestone-percent">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div id="milestone-progress" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="slot-machine" id="machine-body">
+                <div class="reels">
+                    <div class="reel" id="reel-0"><div class="reel-strip"></div></div>
+                    <div class="reel" id="reel-1"><div class="reel-strip"></div></div>
+                    <div class="reel" id="reel-2"><div class="reel-strip"></div></div>
+                </div>
+                
+                <div class="controls">
+                    <button id="spin-btn">
+                        <span class="btn-text">RUN INFERENCE</span>
+                        <span class="btn-cost">10 TOKENS</span>
+                    </button>
+                    <button id="reset-btn" class="hidden">PIVOT (SEEK SEED FUNDING)</button>
+                </div>
+            </div>
+
+            <div class="console">
+                <div class="console-header">
+                    <div class="console-title">
+                        <span class="status-dot live"></span>
+                        SYSTEM_TERMINAL
+                    </div>
+                    <span id="system-status">IDLE</span>
+                </div>
+                <div id="logs" class="log-content">
+                    <div class="log-entry log-system">Kernel initialized. Awaiting founder input...</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Disclaimer: Valuations are based on stochastic hallucinations. All "Compute" is synthetic.</p>
+                <p class="copyright">© 2026 NeuralGrift Inc. | Part of the GriftGraph™ Ecosystem</p>
+            </div>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
