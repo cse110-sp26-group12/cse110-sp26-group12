@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hype-as-a-Service (HaaS) Slot Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hype-as-a-Service</h1>
+            <p class="subtitle">Burning GPU Credits for "Potential" Value</p>
+        </header>
+
+        <main class="slot-machine">
+            <div class="dashboard">
+                <div class="stat-box">
+                    <label>GPU Credits</label>
+                    <div id="credits" class="value">100.00</div>
+                </div>
+                <div class="stat-box">
+                    <label>Hype Level</label>
+                    <div id="hype" class="value">0%</div>
+                </div>
+            </div>
+
+            <div class="reel-container">
+                <div class="reel" id="reel1">
+                    <div class="reel-strip" id="strip1"></div>
+                </div>
+                <div class="reel" id="reel2">
+                    <div class="reel-strip" id="strip2"></div>
+                </div>
+                <div class="reel" id="reel3">
+                    <div class="reel-strip" id="strip3"></div>
+                </div>
+                <div class="win-line"></div>
+            </div>
+
+            <div class="controls">
+                <button id="prompt-btn" class="primary-btn">SEND PROMPT (5 Credits)</button>
+                <div class="bet-info">
+                    <span>Loss per prompt: 5.00 GPU Credits</span>
+                </div>
+            </div>
+
+            <div id="status-display" class="status-display">
+                Ready to hallucinate value...
+            </div>
+        </main>
+
+        <footer>
+            <p>Warning: 99.9% chance of hallucination. Not financial advice.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

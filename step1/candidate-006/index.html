@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hype Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>AI HYPE INFERENCE MACHINE</h1>
+            <div class="subtitle">Generating valuation out of thin air</div>
+        </header>
+
+        <main class="machine-container">
+            <div class="slot-machine">
+                <div class="reels">
+                    <div class="reel" id="reel1">
+                        <div class="reel-strip">
+                            <!-- Symbols will be injected here -->
+                        </div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="reel-strip">
+                            <!-- Symbols will be injected here -->
+                        </div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="reel-strip">
+                            <!-- Symbols will be injected here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="bet-controls">
+                        <label>Token Cost:</label>
+                        <span id="bet-display">10</span>
+                        <button id="bet-up">Scale Compute</button>
+                    </div>
+                    <button id="spin-btn" class="glow-btn">BURN TOKENS (SPIN)</button>
+                </div>
+            </div>
+
+            <aside class="dashboard">
+                <div class="stat-panel">
+                    <div class="stat">
+                        <label>Compute Credits</label>
+                        <div id="credits-display" class="stat-value">1000</div>
+                    </div>
+                    <div class="stat">
+                        <label>Current Valuation</label>
+                        <div id="valuation-display" class="stat-value">$0M</div>
+                    </div>
+                </div>
+
+                <div class="hype-terminal">
+                    <div class="terminal-header">Hype Logs</div>
+                    <div id="log-content" class="terminal-content">
+                        <div>> Initializing hype engine...</div>
+                        <div>> Valuation: Seed Stage.</div>
+                    </div>
+                </div>
+
+                <button id="reset-btn" class="secondary-btn">RAISE SERIES A (RESET)</button>
+            </aside>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

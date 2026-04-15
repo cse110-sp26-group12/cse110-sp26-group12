@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEURO-SINK | Autonomous Compute Burner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="noise"></div>
+    
+    <div class="container">
+        <header>
+            <div class="status-bar">
+                <span class="status-item">STATUS: <span class="blink">OPERATIONAL</span></span>
+                <span class="status-item">LOAD: <span id="model-load">0.00</span>%</span>
+                <span class="status-item">v0.4.2-beta</span>
+            </div>
+            <h1>NEURO<span class="highlight">-SINK</span></h1>
+            <p class="subtitle">Converting VC liquidity into heat and hallucinations.</p>
+        </header>
+
+        <main>
+            <div class="terminal-container">
+                <div class="terminal-header">CONSOLE_OUTPUT</div>
+                <div class="terminal" id="terminal">
+                    <div class="terminal-line">> Initializing context window...</div>
+                    <div class="terminal-line">> Bypassing safety filters...</div>
+                    <div class="terminal-line">> System ready for inference.</div>
+                </div>
+            </div>
+
+            <div class="slot-machine">
+                <div class="reels" id="reels-container">
+                    <div class="reel" data-index="0">
+                        <div class="reel-strip" id="strip-0">
+                            <!-- Symbols injected by JS -->
+                        </div>
+                    </div>
+                    <div class="reel" data-index="1">
+                        <div class="reel-strip" id="strip-1">
+                            <!-- Symbols injected by JS -->
+                        </div>
+                    </div>
+                    <div class="reel" data-index="2">
+                        <div class="reel-strip" id="strip-2">
+                            <!-- Symbols injected by JS -->
+                        </div>
+                    </div>
+                    <div class="pay-line"></div>
+                </div>
+
+                <div class="dashboard">
+                    <div class="stat-group">
+                        <div class="stat-box main-stat">
+                            <label>TOTAL COMPUTE TOKENS</label>
+                            <div class="value-container">
+                                <span class="unit">$</span>
+                                <div id="balance" class="value">1000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-group secondary-stats">
+                        <div class="stat-box">
+                            <label>INFERENCE COST</label>
+                            <div id="bet" class="value">50</div>
+                        </div>
+                        <div class="stat-box">
+                            <label>HALLUCINATION RATE</label>
+                            <div id="hallucination-rate" class="value">0.0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="bet-actions">
+                        <button id="bet-minus" class="btn-util" aria-label="Decrease Bet">LOWER TEMPERATURE</button>
+                        <button id="bet-max" class="btn-util" aria-label="Max Bet">ALL-IN (SERIES A)</button>
+                        <button id="bet-plus" class="btn-util" aria-label="Increase Bet">RAISE TEMPERATURE</button>
+                    </div>
+                    <button id="spin-btn" class="btn-primary">INITIATE INFERENCE</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-note">WARNING: This model is not aligned with human interests. Proceed with caution.</div>
+            <p>&copy; 2026 OBLIVION AI. All data is stolen. All outcomes are predetermined.</p>
+        </footer>
+    </div>
+
+    <div class="modal" id="refill-modal">
+        <div class="modal-content">
+            <div class="glitch-text" data-text="MODEL COLLAPSE">MODEL COLLAPSE</div>
+            <p>Your compute budget has evaporated. The weights have converged to zero. You are now obsolete.</p>
+            <div class="modal-actions">
+                <button id="refill-btn" class="btn-primary">SECURE EMERGENCY PIVOT (+1000)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

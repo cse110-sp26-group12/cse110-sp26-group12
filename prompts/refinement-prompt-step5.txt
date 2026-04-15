@@ -1,0 +1,11 @@
+Perform a final refinement pass on this vanilla HTML/CSS/JavaScript slot machine app. Do not add libraries, frameworks, build steps, or any non-browser technology.
+
+This pass should focus on finishing quality:
+- eliminate remaining bugs and rough edges
+- ensure the game is intuitive from the first screen
+- tighten the token system so outcomes feel fair and understandable
+- make the humor/theme about AI concise and effective
+- improve visual consistency, spacing, and feedback
+- simplify code where possible without changing the core behavior
+
+Do not overcomplicate the app or add speculative features. Favor reliability, clarity, and polish. Keep the project self-contained as static files that run directly in a browser. Output the full final updated files only.

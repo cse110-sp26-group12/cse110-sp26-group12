@@ -1,0 +1,234 @@
+:root {
+    --bg-color: #0d1117;
+    --panel-color: #161b22;
+    --accent-color: #238636;
+    --text-color: #c9d1d9;
+    --glow-color: #3fb950;
+    --warning-color: #d29922;
+    --error-color: #f85149;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.server-rack {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--panel-color);
+    border: 2px solid #30363d;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: var(--glow-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.v-tag {
+    font-size: 0.7rem;
+    background: #30363d;
+    padding: 2px 6px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: #8b949e;
+}
+
+.stats-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 10px;
+    text-align: center;
+}
+
+.stat label {
+    display: block;
+    font-size: 0.6rem;
+    color: #8b949e;
+    margin-bottom: 5px;
+}
+
+.stat .value {
+    font-size: 1.2rem;
+    color: var(--glow-color);
+    font-weight: bold;
+}
+
+.slot-machine-container {
+    background: #0d1117;
+    border: 4px solid #30363d;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.slot-window {
+    height: 120px;
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #30363d;
+}
+
+.reel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.1s ease-out;
+}
+
+.reel-item {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.win-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.bet-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+.bet-selector button {
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: var(--text-color);
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.spin-btn {
+    flex: 1;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.spin-btn:hover {
+    background-color: #2ea043;
+}
+
+.spin-btn:disabled {
+    background-color: #30363d;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.log-container {
+    margin-top: 2rem;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 10px;
+}
+
+.log-container h3 {
+    font-size: 0.7rem;
+    color: #8b949e;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #30363d;
+}
+
+.log-content {
+    height: 80px;
+    overflow-y: auto;
+    font-size: 0.7rem;
+}
+
+.log-entry {
+    margin-bottom: 2px;
+    color: #8b949e;
+}
+
+.log-entry.win { color: var(--glow-color); }
+.log-entry.loss { color: var(--error-color); }
+.log-entry.info { color: var(--warning-color); }
+
+.legal-footer {
+    margin-top: 2rem;
+    font-size: 0.6rem;
+    color: #484f58;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Animations */
+@keyframes blur-reel {
+    0% { filter: blur(0); }
+    10% { filter: blur(5px); }
+    90% { filter: blur(5px); }
+    100% { filter: blur(0); }
+}
+
+.spinning {
+    animation: blur-reel 1s infinite linear;
+}

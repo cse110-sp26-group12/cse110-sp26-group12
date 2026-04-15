@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compute Casino - AI Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="casino-container">
+        <header>
+            <h1>COMPUTE CASINO</h1>
+            <p class="subtitle">Burn VRAM, Build Dreams (mostly hallucinations)</p>
+        </header>
+
+        <div class="status-panel">
+            <div class="stat">
+                <span class="label">Compute Tokens:</span>
+                <span id="balance" class="value">100</span>
+            </div>
+            <div class="stat">
+                <span class="label">Bet:</span>
+                <span id="current-bet" class="value">10</span>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel1"><div class="reel-content">🤖</div></div>
+                <div class="reel" id="reel2"><div class="reel-content">🚀</div></div>
+                <div class="reel" id="reel3"><div class="reel-content">🔋</div></div>
+            </div>
+            <div class="lever-area">
+                <button id="spin-btn" class="main-btn">TRAIN MODEL (SPIN)</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="bet-minus">-</button>
+            <button id="bet-plus">+</button>
+            <button id="bet-max">ALL IN (A100 BUDGET)</button>
+            <button id="reset-btn">BEG FOR VC FUNDING</button>
+        </div>
+
+        <div id="message-area" class="message-area">
+            Welcome to the AI Gold Rush!
+        </div>
+
+        <div class="payout-table">
+            <h3>Reward Table (Token Multipliers)</h3>
+            <ul>
+                <li>🤖 🤖 🤖 : AGI Achieved (Jackpot! x100)</li>
+                <li>🚀 🚀 🚀 : Series A Funding (x10)</li>
+                <li>🔋 🔋 🔋 : GPU Delivery (x5)</li>
+                <li>🌪️ 🌪️ 🌪️ : Massive Hallucination (Reset Balance!)</li>
+                <li>📉 📉 📉 : Overfitting (Lose Bet)</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

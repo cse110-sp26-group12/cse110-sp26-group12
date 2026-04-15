@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Jackpot: Token Burner Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>LLM Jackpot: <span>Token Burner</span></h1>
+            <p class="subtitle">"Your life's savings, tokenized."</p>
+        </header>
+
+        <section id="stats">
+            <div class="stat-box">
+                <label>Token Balance</label>
+                <div id="balance">1000</div>
+            </div>
+            <div class="stat-box">
+                <label>Bet Per Prompt</label>
+                <div id="bet-display">50</div>
+            </div>
+        </section>
+
+        <section id="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel-1">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel-2">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel-3">
+                    <div class="reel-strip"></div>
+                </div>
+            </div>
+            <div class="winning-line"></div>
+        </section>
+
+        <section id="controls">
+            <div class="bet-controls">
+                <button id="bet-down" class="btn-small">-</button>
+                <span id="current-bet-label">BET 50</span>
+                <button id="bet-up" class="btn-small">+</button>
+            </div>
+            <button id="spin-button">GENERATE RESPONSE</button>
+        </section>
+
+        <section id="ai-console">
+            <div class="console-header">MODEL_LOGS_v4.0.2</div>
+            <div id="console-output">
+                > Initializing weights...<br>
+                > Loading dataset...<br>
+                > User detected. Ready to burn tokens.
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

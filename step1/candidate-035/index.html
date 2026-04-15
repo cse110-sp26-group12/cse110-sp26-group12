@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stochastic Profit Machine | AI Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>STOCHASTIC PROFIT MACHINE</h1>
+            <p class="subtitle">Generating Profits with 99.9% Confidence Interval*</p>
+        </header>
+
+        <main class="slot-machine">
+            <div class="console-display">
+                <div class="stat-box">
+                    <span class="label">Compute Budget</span>
+                    <span id="token-balance" class="value">1000</span>
+                    <span class="unit">Tokens</span>
+                </div>
+                <div class="status-box">
+                    <span class="label">System Status</span>
+                    <div id="system-status" class="status-text">AWAITING PROMPT...</div>
+                </div>
+            </div>
+
+            <div class="reels-container">
+                <div class="reel" id="reel-1">
+                    <div class="symbol-strip" id="strip-1"></div>
+                </div>
+                <div class="reel" id="reel-2">
+                    <div class="symbol-strip" id="strip-2"></div>
+                </div>
+                <div class="reel" id="reel-3">
+                    <div class="symbol-strip" id="strip-3"></div>
+                </div>
+                <div class="payline"></div>
+            </div>
+
+            <div class="controls">
+                <div class="bet-control">
+                    <label for="bet-amount">Max Tokens per Request:</label>
+                    <select id="bet-amount">
+                        <option value="10">10 (Standard Model)</option>
+                        <option value="50">50 (Advanced Reasoning)</option>
+                        <option value="100">100 (Billion Parameter Spin)</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button id="spin-button" class="spin-btn">GENERATE RESPONSE</button>
+                    <button id="vc-button" class="vc-btn">REQUEST VENTURE CAPITAL</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>*Disclaimer: Payouts may be hallucinations. Past performance does not guarantee future tokens.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

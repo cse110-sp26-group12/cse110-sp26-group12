@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI Oracle: Token Burner 9000</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="machine-container">
+        <header>
+            <h1>AGI Oracle <small>v0.1-alpha</small></h1>
+            <p class="subtitle">Prophesying your future in tokens.</p>
+        </header>
+
+        <main>
+            <div class="display-panel">
+                <div class="stat-box">
+                    <span class="label">Context Tokens</span>
+                    <span id="token-balance" class="value">1000</span>
+                </div>
+                <div class="stat-box">
+                    <span class="label">Inference Cost</span>
+                    <span id="inference-cost" class="value">10</span>
+                </div>
+            </div>
+
+            <div class="slot-window">
+                <div class="reel-container">
+                    <div id="reel-1" class="reel">
+                        <div class="reel-strip"></div>
+                    </div>
+                    <div id="reel-2" class="reel">
+                        <div class="reel-strip"></div>
+                    </div>
+                    <div id="reel-3" class="reel">
+                        <div class="reel-strip"></div>
+                    </div>
+                </div>
+                <div class="payline"></div>
+            </div>
+
+            <div class="log-panel">
+                <div id="status-log" class="log-content">> Ready for next prompt...</div>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="temperature-slider">Temperature: <span id="temp-val">0.7</span></label>
+                    <input type="range" id="temperature-slider" min="0.1" max="1.0" step="0.1" value="0.7">
+                </div>
+                <button id="prompt-btn" class="glow-on-hover">PROMPT</button>
+            </div>
+        </main>
+
+        <footer>
+            <button id="reset-btn" class="reset-link">Request VC Funding (Reset)</button>
+            <p>Warning: Payouts are statistically insignificant hallucinations.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

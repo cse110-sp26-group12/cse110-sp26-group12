@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Token Grinder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glitch" data-text="LLM TOKEN GRINDER">LLM TOKEN GRINDER</h1>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="label">Context Window:</span>
+                    <span id="token-balance" class="value">10,000</span>
+                    <span class="unit">tokens</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Compute Status:</span>
+                    <span id="status-message" class="value">Awaiting Prompt...</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="slot-machine">
+            <div class="reels-container">
+                <div class="reel" id="reel-1">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel-2">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="reel" id="reel-3">
+                    <div class="reel-strip"></div>
+                </div>
+                <div class="win-line"></div>
+            </div>
+
+            <div class="controls">
+                <div class="bet-info">
+                    <span>Prompt Cost: 100 Tokens</span>
+                </div>
+                <button id="spin-button">BURN TOKENS</button>
+                <button id="vc-button" style="display: none;">REQUEST VC FUNDING</button>
+                <div class="auto-agent">
+                    <label>
+                        <input type="checkbox" id="auto-spin"> Enable Agent Mode (Auto-Spin)
+                    </label>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 AI Overlords. All tokens are non-refundable hallucinations.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

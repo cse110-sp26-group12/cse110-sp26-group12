@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stochastic Parrot Casino - AI Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="casino-container">
+        <header>
+            <h1>🦜 Stochastic Parrot Casino</h1>
+            <p class="subtitle">Prompt your way to AGI!</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="label">Context Window:</span>
+                <span id="balance" class="value">1000</span>
+                <span class="unit">Tokens</span>
+            </div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel1">🤖</div>
+                <div class="reel" id="reel2">🤖</div>
+                <div class="reel" id="reel3">🤖</div>
+            </div>
+            
+            <div class="controls">
+                <button id="spin-btn">Generate Output (10 Tokens)</button>
+            </div>
+        </div>
+
+        <div class="message-area">
+            <p id="status-msg">Welcome to the Stochastic Parrot Casino. Please provide a prompt.</p>
+        </div>
+
+        <div class="paytable">
+            <h3>Reward Weights (Log-Scale)</h3>
+            <ul>
+                <li>🤖 🤖 🤖 : AGI Achieved! (+500 Tokens)</li>
+                <li>💻 💻 💻 : H100 Cluster Secured! (+200 Tokens)</li>
+                <li>🧠 🧠 🧠 : Scaling Laws Confirmed! (+100 Tokens)</li>
+                <li>🪙 🪙 🪙 : Context Expanded! (+50 Tokens)</li>
+                <li>☁️ ☁️ ☁️ : <span class="warning">Model Hallucinated! (-50 Tokens)</span></li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

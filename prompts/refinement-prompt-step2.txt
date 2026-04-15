@@ -1,0 +1,11 @@
+Refine this existing vanilla HTML/CSS/JavaScript slot machine app without introducing any new technologies, libraries, frameworks, or build tools. Improve correctness, clarity, and playability while preserving the overall concept of a slot machine that satirizes AI through winning and spending tokens.
+
+Focus on:
+- fixing broken or inconsistent game behavior
+- making the UI more understandable and visually cohesive
+- improving button flow, feedback, and status messaging
+- making token gain/loss rules clear and internally consistent
+- reducing obvious bugs, dead code, and duplication
+- improving code organization and readability
+
+Keep the project self-contained and runnable in a browser as simple static files. Do not add backend code. Do not add extra setup steps. Prefer a polished, reliable small game over ambitious features. Output the complete updated files only.

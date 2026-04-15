@@ -1,0 +1,135 @@
+:root {
+    --neon-blue: #00f2ff;
+    --neon-pink: #ff00e5;
+    --dark-bg: #0d0d12;
+    --panel-bg: #1a1a24;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.machine-container {
+    background: var(--panel-bg);
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #333;
+    box-shadow: 0 0 50px rgba(0, 242, 255, 0.15);
+    width: 400px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    color: var(--neon-blue);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.subtitle {
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: #000;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px inset #333;
+}
+
+.stat-box span {
+    display: block;
+    font-size: 0.65rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.stat-box strong {
+    font-size: 1.3rem;
+    color: var(--neon-blue);
+}
+
+.slot-row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.reel {
+    width: 90px;
+    height: 110px;
+    background: #050505;
+    border: 2px solid var(--neon-pink);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    box-shadow: inset 0 0 15px rgba(255, 0, 229, 0.3);
+}
+
+button {
+    background: var(--neon-pink);
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s;
+    box-shadow: 0 5px 15px rgba(255, 0, 229, 0.4);
+    width: 100%;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:disabled {
+    background: #444;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+#message {
+    margin-top: 20px;
+    height: 40px;
+    font-size: 0.8rem;
+    color: var(--neon-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.console {
+    margin-top: 20px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.6rem;
+    text-align: left;
+    color: #4f4;
+    opacity: 0.7;
+}

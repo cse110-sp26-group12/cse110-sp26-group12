@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HYPE MACHINE v1.0</title>
+    <style>
+        :root {
+            --terminal-green: #00ff41;
+            --terminal-dark: #0d0208;
+            --terminal-glow: rgba(0, 255, 65, 0.2);
+            --crt-scanline: rgba(18, 16, 16, 0.1);
+        }
+
+        body {
+            background-color: var(--terminal-dark);
+            color: var(--terminal-green);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        /* CRT Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, var(--crt-scanline) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 10;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: rgba(18, 16, 16, 0.1);
+            opacity: 0;
+            z-index: 10;
+            pointer-events: none;
+            animation: flicker 0.15s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.1; }
+            100% { opacity: 0.2; }
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 0 0 10px var(--terminal-green);
+        }
+
+        .stats-panel {
+            border: 2px solid var(--terminal-green);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            width: 300px;
+            box-shadow: 0 0 15px var(--terminal-glow);
+        }
+
+        .slot-machine {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .reel {
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--terminal-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background-color: black;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px var(--terminal-glow);
+        }
+
+        .reel-content {
+            transition: transform 0.5s cubic-bezier(.45,.05,.55,.95);
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        button {
+            background-color: var(--terminal-dark);
+            color: var(--terminal-green);
+            border: 2px solid var(--terminal-green);
+            padding: 0.8rem 2rem;
+            font-family: inherit;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background-color: var(--terminal-green);
+            color: var(--terminal-dark);
+            box-shadow: 0 0 20px var(--terminal-green);
+        }
+
+        button:disabled {
+            border-color: #004411;
+            color: #004411;
+            cursor: not-allowed;
+        }
+
+        .terminal-log {
+            width: 500px;
+            height: 100px;
+            border: 1px solid var(--terminal-green);
+            margin-top: 2rem;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            overflow-y: hidden;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .log-entry {
+            margin-bottom: 2px;
+        }
+
+        .spinning {
+            animation: blur 0.1s infinite;
+        }
+
+        @keyframes blur {
+            0% { filter: blur(0px); }
+            50% { filter: blur(4px); }
+            100% { filter: blur(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AI HYPE MACHINE v1.0</h1>
+        <p>Turning compute into hype since 2023</p>
+    </div>
+
+    <div class="stats-panel">
+        <div>COMPUTE_TOKENS: <span id="token-count">100</span></div>
+        <div>MARKET_CAP: $<span id="market-cap">0</span>M</div>
+    </div>
+
+    <div class="slot-machine">
+        <div class="reel" id="reel1">👾</div>
+        <div class="reel" id="reel2">💿</div>
+        <div class="reel" id="reel3">💾</div>
+    </div>
+
+    <div class="controls">
+        <button id="spin-button">RUN_INFERENCE (-10 TKNS)</button>
+        <div id="status-msg">READY TO SCALE</div>
+    </div>
+
+    <div class="terminal-log" id="log">
+        <div class="log-entry">> INITIALIZING WEIGHTS...</div>
+        <div class="log-entry">> SYSTEM READY.</div>
+    </div>
+
+    <script>
+        const symbols = ['👾', '💿', '💾', '🔌', '⚠️'];
+        const symbolMap = {
+            '👾': 'AGI',
+            '💿': 'GPU',
+            '💾': 'PAPER',
+            '🔌': 'PIVOT',
+            '⚠️': 'ERROR'
+        };
+
+        let tokens = 100;
+        let marketCap = 0;
+        const spinCost = 10;
+
+        const tokenEl = document.getElementById('token-count');
+        const marketCapEl = document.getElementById('market-cap');
+        const spinBtn = document.getElementById('spin-button');
+        const statusEl = document.getElementById('status-msg');
+        const logEl = document.getElementById('log');
+        const reels = [
+            document.getElementById('reel1'),
+            document.getElementById('reel2'),
+            document.getElementById('reel3')
+        ];
+
+        const satiricalMessages = [
+            "ALIGNING HUMAN VALUES...",
+            "REDUCING HALLUCINATIONS...",
+            "RAISING SERIES B...",
+            "BURNING INVESTOR CASH...",
+            "TOKENIZING THE UNIVERSE...",
+            "SCRAPING REDDIT DATA...",
+            "SIMULATING INTELLIGENCE...",
+            "DISRUPTING COFFEE MAKING...",
+            "MAXIMIZING SYNERGY..."
+        ];
+
+        function addLog(msg) {
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.textContent = `> ${msg}`;
+            logEl.prepend(entry);
+        }
+
+        function getRandomSymbol() {
+            return symbols[Math.floor(Math.random() * symbols.length)];
+        }
+
+        async function spin() {
+            if (tokens < spinCost) {
+                statusEl.textContent = "INSUFFICIENT COMPUTE";
+                addLog("CRITICAL ERROR: OUT OF TOKENS. PLEASE PURCHASE MORE VC CREDITS.");
+                return;
+            }
+
+            tokens -= spinCost;
+            tokenEl.textContent = tokens;
+            spinBtn.disabled = true;
+            statusEl.textContent = "INFERENCING...";
+            
+            addLog(`SPENDING ${spinCost} TOKENS ON COMPUTE...`);
+
+            // Animation
+            const spinDurations = [1000, 1500, 2000];
+            const finalSymbols = [getRandomSymbol(), getRandomSymbol(), getRandomSymbol()];
+
+            reels.forEach((reel, i) => {
+                reel.classList.add('spinning');
+                let interval = setInterval(() => {
+                    reel.textContent = getRandomSymbol();
+                }, 50);
+
+                setTimeout(() => {
+                    clearInterval(interval);
+                    reel.classList.remove('spinning');
+                    reel.textContent = finalSymbols[i];
+                }, spinDurations[i]);
+            });
+
+            await new Promise(resolve => setTimeout(resolve, 2100));
+
+            checkWin(finalSymbols);
+            spinBtn.disabled = false;
+        }
+
+        function checkWin(results) {
+            const [s1, s2, s3] = results;
+            let winAmount = 0;
+            let capBoost = 0;
+
+            if (s1 === '👾' && s2 === '👾' && s3 === '👾') {
+                winAmount = 500;
+                capBoost = 1000;
+                statusEl.textContent = "JACKPOT: AGI ACHIEVED!";
+                addLog("HOLY GRAIL FOUND. PAPERCLIP MAXIMIZER ENGAGED.");
+            } else if (s1 === s2 && s2 === s3) {
+                if (s1 === '💿') {
+                    winAmount = 200;
+                    capBoost = 500;
+                    statusEl.textContent = "H100 CLUSTER SECURED!";
+                } else if (s1 === '💾') {
+                    winAmount = 100;
+                    capBoost = 200;
+                    statusEl.textContent = "ARXIV PAPER PUBLISHED!";
+                } else if (s1 === '🔌') {
+                    winAmount = 50;
+                    capBoost = 50;
+                    statusEl.textContent = "SUCCESSFUL PIVOT!";
+                } else if (s1 === '⚠️') {
+                    winAmount = 0;
+                    tokens = Math.max(0, tokens - 50);
+                    statusEl.textContent = "MASSIVE HALLUCINATION!";
+                    addLog("LITIGATION PENDING. TOKENS SEIZED BY REGULATORS.");
+                }
+            } else if (s1 === '⚠️' || s2 === '⚠️' || s3 === '⚠️') {
+                statusEl.textContent = "MINOR HALLUCINATION";
+                addLog("MODEL CLAIMED IT WAS A CAT. IGNORE RESULTS.");
+            } else {
+                statusEl.textContent = satiricalMessages[Math.floor(Math.random() * satiricalMessages.length)];
+            }
+
+            if (winAmount > 0) {
+                tokens += winAmount;
+                marketCap += capBoost;
+                addLog(`PROFIT: ${winAmount} TOKENS GENERATED.`);
+            } else if (statusEl.textContent.includes("HALLUCINATION")) {
+                // Already handled in logic
+            } else {
+                addLog("COMPUTE WASTED. NO BREAKTHROUGH DETECTED.");
+            }
+
+            tokenEl.textContent = tokens;
+            marketCapEl.textContent = marketCap;
+        }
+
+        spinBtn.addEventListener('click', spin);
+    </script>
+</body>
+</html>

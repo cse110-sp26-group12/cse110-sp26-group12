@@ -1,0 +1,190 @@
+:root {
+    --bg-color: #0d0d12;
+    --panel-color: #1a1a24;
+    --accent-color: #00ff9d;
+    --danger-color: #ff3e3e;
+    --text-color: #e0e0e0;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --reel-size: 100px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: var(--panel-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 255, 157, 0.1);
+    text-align: center;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.stat-box label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.stat-box .value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.reel-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 2rem 0;
+    padding: 15px;
+    background: #000;
+    border: 4px solid #333;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.reel {
+    width: var(--reel-size);
+    height: var(--reel-size);
+    background: #111;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.reel-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.symbol {
+    width: 100%;
+    height: var(--reel-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    background: #111;
+}
+
+.win-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(0, 255, 157, 0.3);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.controls {
+    margin: 2rem 0;
+}
+
+.primary-btn {
+    background: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+    width: 100%;
+}
+
+.primary-btn:hover {
+    background: #00cc7d;
+}
+
+.primary-btn:active {
+    transform: scale(0.98);
+}
+
+.primary-btn:disabled {
+    background: #333;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.bet-info {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.status-display {
+    min-height: 2.5rem;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #ccc;
+    border-left: 3px solid var(--accent-color);
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    color: #444;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+.spinning {
+    animation: spin 0.15s linear infinite;
+}

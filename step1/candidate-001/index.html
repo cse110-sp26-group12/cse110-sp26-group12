@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-9 TOKEN BURNER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 class="glitch-text" data-text="GPT-9 TOKEN BURNER">GPT-9 TOKEN BURNER</h1>
+            <p class="subtitle">Burning your Series A, one token at a time.</p>
+        </header>
+
+        <div class="main-layout">
+            <!-- LEFT: DASHBOARD -->
+            <aside class="panel dashboard">
+                <div class="stat-box">
+                    <label>COMPUTE CREDITS (Tokens)</label>
+                    <div id="credits" class="value">10,000</div>
+                </div>
+                <div class="stat-box">
+                    <label>VALUATION (Series B?)</label>
+                    <div id="valuation" class="value success">$0</div>
+                </div>
+                <div class="control-box">
+                    <label>TEMPERATURE (Volatility)</label>
+                    <input type="range" id="temp-slider" min="0" max="100" value="20">
+                    <div id="temp-display" class="stat-mini">0.2 / Stable</div>
+                </div>
+            </aside>
+
+            <!-- CENTER: SLOT MACHINE -->
+            <main class="machine-frame">
+                <div class="reels-container">
+                    <div class="reel" id="reel-1"><div class="strip"></div></div>
+                    <div class="reel" id="reel-2"><div class="strip"></div></div>
+                    <div class="reel" id="reel-3"><div class="strip"></div></div>
+                    <div class="payline"></div>
+                </div>
+                <div class="machine-controls">
+                    <div class="bet-info">
+                        <label>INFERENCE COST:</label>
+                        <span id="bet-amount">100</span>
+                    </div>
+                    <button id="spin-btn" class="primary-btn">RUN INFERENCE (SPIN)</button>
+                </div>
+            </main>
+
+            <!-- RIGHT: TERMINAL LOGS -->
+            <aside class="panel terminal">
+                <div class="terminal-header">CONSOLE OUTPUT</div>
+                <div id="logs" class="terminal-content">
+                    <div class="log-entry">> Initializing GPT-9 weights...</div>
+                    <div class="log-entry">> GPU cluster online. Ready to burn.</div>
+                </div>
+                <button id="reset-btn" class="reset-btn">PIVOT (RESET)</button>
+            </aside>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

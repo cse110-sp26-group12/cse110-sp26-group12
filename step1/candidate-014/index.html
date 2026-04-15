@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Compute Grind - Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI COMPUTE GRIND</h1>
+            <p class="subtitle">"Where your tokens become our profit."</p>
+        </header>
+
+        <div class="status-panel">
+            <div class="display-box">
+                <span class="label">COMPUTE CREDITS</span>
+                <span id="balance">1000</span>
+            </div>
+            <div class="display-box">
+                <span class="label">INFERENCE COST</span>
+                <span>50</span>
+            </div>
+        </div>
+
+        <div class="machine">
+            <div class="slot-window">
+                <div class="reel" id="reel-1">🤖</div>
+                <div class="reel" id="reel-2">🤖</div>
+                <div class="reel" id="reel-3">🤖</div>
+            </div>
+            <div class="pay-line"></div>
+        </div>
+
+        <div class="controls">
+            <button id="spin-btn">GENERATE OUTPUT</button>
+            <button id="reset-btn" class="secondary">RESET QUOTA</button>
+        </div>
+
+        <div class="monitor">
+            <div id="status-message">Awaiting Compute Allocation...</div>
+        </div>
+
+        <div class="payout-table">
+            <h3>REWARD TIER (LLM HALLUCINATIONS)</h3>
+            <ul>
+                <li>💎💎💎: +1000 (Market Hype Peak)</li>
+                <li>🤖🤖🤖: +250 (Average Response)</li>
+                <li>🔥🔥🔥: -200 (Server Meltdown)</li>
+                <li>💩💩💩: +0 (Hallucination Error)</li>
+            </ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Refine this vanilla HTML/CSS/JavaScript slot machine app further using only the existing technology stack. Do not introduce frameworks, libraries, TypeScript, canvases, or backend services.
+
+Prioritize:
+- stronger game feel and user feedback
+- better pacing of spins, wins, losses, and token spending
+- clearer visual hierarchy and readability
+- more coherent AI satire in labels, events, and outcomes
+- improved edge-case handling so the app does not become confusing or unwinnable
+- cleaner, more maintainable code structure
+
+Preserve the core slot machine concept. Avoid feature bloat. Any additions should directly improve usability, humor, or stability. Keep everything self-contained in static browser files and make sure the result runs cleanly with no extra configuration. Output the full updated project files only.

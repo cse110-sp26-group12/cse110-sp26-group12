@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Large Luck Machine (LLM)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>THE LARGE LUCK MACHINE</h1>
+            <p class="subtitle">Generating Value Through High-Stakes Probability</p>
+        </header>
+
+        <main>
+            <div class="slot-machine">
+                <div class="reels" id="reels">
+                    <div class="reel" id="reel1">🤖</div>
+                    <div class="reel" id="reel2">⚡</div>
+                    <div class="reel" id="reel3">🍄</div>
+                </div>
+                
+                <div class="status-panel">
+                    <div class="stat">
+                        <span class="label">Compute Credits</span>
+                        <span id="credits" class="value">1000</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Last Generation</span>
+                        <span id="last-win" class="value">0</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="bet-control">
+                        <button id="bet-minus">-</button>
+                        <div class="bet-display">
+                            <span class="label">Tokens/Gen</span>
+                            <span id="current-bet" class="value">10</span>
+                        </div>
+                        <button id="bet-plus">+</button>
+                    </div>
+                    <button id="spin-btn" class="main-btn">GENERATE RESULT</button>
+                    <button id="vc-btn" class="main-btn secondary" style="display: none;">REQUEST VC FUNDING</button>
+                </div>
+            </div>
+
+            <div class="console-container">
+                <div class="console-header">SYSTEM LOGS</div>
+                <div id="console-log" class="console-log">
+                    <div class="log-entry">> Machine initialized. Weights randomized.</div>
+                    <div class="log-entry">> Ready for hallucination...</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with 0% human oversight. All losses are aligned with stakeholder interests.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE HALLUCINATOR 9000 // AI TOKEN GRINDER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="crt-enabled">
+    <div class="crt-overlay"></div>
+    <div class="scanline"></div>
+    
+    <div class="container">
+        <header>
+            <div class="header-meta">
+                <span>V0.9.4-BETA</span>
+                <span id="uptime-clock">UPTIME: 00:00:00</span>
+            </div>
+            <h1>HALLUCINATOR <span class="version-tag">9000</span></h1>
+            
+            <div class="status-panel">
+                <div class="status-row">
+                    <span class="label">MODEL_TRAINING:</span>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span id="progress-text" class="value">0%</span>
+                </div>
+                <div class="status-row">
+                    <span class="label">GPU_TEMP:</span>
+                    <div id="temp-gauge" class="gauge">
+                        <div class="gauge-fill" style="width: 42%"></div>
+                    </div>
+                    <span id="temp-value" class="value">42°C</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="machine-frame">
+            <div class="reels-container">
+                <div class="reel" data-index="0">
+                    <div class="reel-strip" id="strip-0"></div>
+                    <div class="reel-overlay"></div>
+                </div>
+                <div class="reel" data-index="1">
+                    <div class="reel-strip" id="strip-1"></div>
+                    <div class="reel-overlay"></div>
+                </div>
+                <div class="reel" data-index="2">
+                    <div class="reel-strip" id="strip-2"></div>
+                    <div class="reel-overlay"></div>
+                </div>
+                <div class="win-line"></div>
+            </div>
+            
+            <div class="control-deck">
+                <div class="display-group">
+                    <div class="display primary">
+                        <span class="label">GPU_TOKENS</span>
+                        <div class="value-wrapper">
+                            <span id="token-count" class="value">100</span>
+                            <span class="unit">TOK</span>
+                        </div>
+                    </div>
+                    <div class="display secondary">
+                        <span class="label">HYPE_CYCLE</span>
+                        <span id="hype-level" class="value">STABLE</span>
+                    </div>
+                </div>
+                
+                <div class="interaction-group">
+                    <button id="spin-button" class="btn-primary">
+                        <span class="btn-text">INITIALIZE SPIN</span>
+                        <span class="btn-cost">COST: 10T</span>
+                    </button>
+                    <button id="reset-button" class="btn-reset hidden">
+                        REQUEST SERIES A FUNDING
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="system-monitor">
+            <div class="terminal-bar">
+                <span class="terminal-title">STDOUT // LOG_STREAM</span>
+                <span class="terminal-status">CONNECTED</span>
+            </div>
+            <div id="log-content" class="log-stream"></div>
+        </footer>
+
+        <div class="attribution">
+            PRODUCED BY OMNI-LLM-CORP &copy; 2026 // "WE HALLUCINATE SO YOU DON'T HAVE TO"
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

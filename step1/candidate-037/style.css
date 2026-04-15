@@ -1,0 +1,116 @@
+:root {
+    --bg-color: #05050a;
+    --card-bg: #12121f;
+    --neon-blue: #00f2ff;
+    --neon-pink: #ff007f;
+    --neon-green: #39ff14;
+    --text-color: #e0e0e0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.stats-panel {
+    display: flex;
+    justify-content: space-around;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 4px;
+    margin: 20px 0;
+    border: 1px solid #333;
+}
+
+.value { font-weight: bold; color: var(--neon-pink); }
+.text-neon { color: var(--neon-green); }
+
+.slot-machine {
+    background: #1a1a2e;
+    padding: 15px;
+    border: 2px solid #444;
+    position: relative;
+}
+
+.reel-window {
+    display: flex;
+    gap: 8px;
+    background: #000;
+    padding: 8px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+}
+
+.reel {
+    flex: 1;
+    height: 120px;
+    position: relative;
+    border: 1px solid #222;
+}
+
+.symbol-container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.symbol {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.win-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(0, 242, 255, 0.3);
+    z-index: 10;
+}
+
+.controls { text-align: center; margin-top: 25px; }
+
+button {
+    background: var(--neon-pink);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #9d004f;
+}
+
+button:active { transform: translateY(2px); box-shadow: 0 2px 0 #9d004f; }
+button:disabled { background: #444; box-shadow: none; cursor: not-allowed; }
+
+.message { color: var(--neon-blue); text-align: center; height: 20px; }
+.footer { text-align: center; margin-top: 30px; font-size: 0.6rem; color: #444; }

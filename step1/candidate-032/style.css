@@ -1,0 +1,159 @@
+:root {
+    --primary-bg: #1a1a2e;
+    --secondary-bg: #16213e;
+    --accent: #4ecca3;
+    --text-color: #eeeeee;
+    --warning: #ff4d4d;
+    --reel-bg: #0f3460;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.casino-container {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--accent);
+}
+
+.subtitle {
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.stats {
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    font-size: 1.2rem;
+}
+
+.value {
+    font-weight: bold;
+    color: var(--accent);
+    margin: 0 5px;
+}
+
+.slot-machine {
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.reels {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.reel {
+    background-color: var(--reel-bg);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border-radius: 5px;
+    border: 2px solid var(--accent);
+    transition: transform 0.1s ease-in-out;
+}
+
+.spinning {
+    animation: shake 0.1s infinite alternate;
+}
+
+@keyframes shake {
+    from { transform: translateY(-5px); }
+    to { transform: translateY(5px); }
+}
+
+button {
+    background-color: var(--accent);
+    color: var(--primary-bg);
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45b393;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    color: #888;
+}
+
+.message-area {
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+#status-msg {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.paytable {
+    text-align: left;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+
+.paytable h3 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.paytable ul {
+    list-style: none;
+    padding: 0;
+}
+
+.paytable li {
+    margin: 5px 0;
+}
+
+.warning {
+    color: var(--warning);
+}

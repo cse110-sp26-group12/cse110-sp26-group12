@@ -1,0 +1,135 @@
+:root {
+    --bg-color: #0d1117;
+    --text-color: #00ff41;
+    --accent-color: #ff00ff;
+    --border-color: #30363d;
+    --danger-color: #ff4444;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.terminal {
+    width: 600px;
+    padding: 20px;
+    border: 2px solid var(--text-color);
+    box-shadow: 0 0 15px var(--text-color);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--text-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    text-shadow: 0 0 5px var(--text-color);
+}
+
+#token-display {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-top: 5px;
+}
+
+.slot-machine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.reel-container {
+    display: flex;
+    gap: 15px;
+}
+
+.reel {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.reel.spinning {
+    animation: reel-spin 0.2s infinite linear;
+}
+
+@keyframes reel-spin {
+    0% { transform: translateY(-10%); opacity: 0.5; }
+    50% { transform: translateY(10%); opacity: 0.8; }
+    100% { transform: translateY(-10%); opacity: 0.5; }
+}
+
+.controls button {
+    background: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.controls button:hover:not(:disabled) {
+    background: var(--text-color);
+    color: #000;
+    box-shadow: 0 0 10px var(--text-color);
+}
+
+.controls button:disabled {
+    border-color: #555;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.status-feed {
+    margin-top: 20px;
+    height: 100px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    font-size: 0.9rem;
+    background: #000;
+}
+
+.log-entry {
+    margin-bottom: 5px;
+}
+
+.log-entry.win { color: var(--accent-color); font-weight: bold; }
+.log-entry.loss { color: var(--danger-color); }
+
+/* Glitch effect for hallucinations */
+.glitch {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(2px, 0); }
+    20% { transform: translate(-2px, 0); }
+    40% { transform: translate(1px, 2px); }
+    60% { transform: translate(-1px, -2px); }
+    80% { transform: translate(2px, -1px); }
+    100% { transform: translate(0, 0); }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM-O-Matic | Intelligence as a Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="server-rack">
+        <header>
+            <h1>LLM-O-MATIC <span class="v-tag">v4.0-turbo-preview</span></h1>
+            <p class="subtitle">Simulating AGI... one token at a time.</p>
+        </header>
+
+        <main class="main-console">
+            <div class="stats-panel">
+                <div class="stat">
+                    <label>CONTEXT TOKENS</label>
+                    <div id="token-balance" class="value">1000</div>
+                </div>
+                <div class="stat">
+                    <label>COMPUTE COST</label>
+                    <div id="bet-amount" class="value">10</div>
+                </div>
+                <div class="stat">
+                    <label>INFERENCE STATUS</label>
+                    <div id="status-display" class="value">READY</div>
+                </div>
+            </div>
+
+            <div class="slot-machine-container">
+                <div class="slot-window">
+                    <div id="reel1" class="reel"></div>
+                    <div id="reel2" class="reel"></div>
+                    <div id="reel3" class="reel"></div>
+                    <div class="win-line"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="bet-selector">
+                    <button onclick="changeBet(-5)">-5</button>
+                    <span>BET SIZE</span>
+                    <button onclick="changeBet(5)">+5</button>
+                </div>
+                <button id="spin-button" class="spin-btn">INJECT COMPUTE</button>
+            </div>
+        </main>
+
+        <section class="log-container">
+            <h3>INTERNAL MODEL LOGS</h3>
+            <div id="log-content" class="log-content">
+                <div class="log-entry">[SYSTEM] Initializing weights...</div>
+                <div class="log-entry">[SYSTEM] Bypassing safety filters...</div>
+                <div class="log-entry">[SYSTEM] Ready for inference.</div>
+            </div>
+        </section>
+        
+        <footer class="legal-footer">
+            *Results may contain hallucinations. By clicking "Inject Compute," you agree to our 400-page ToS and waive all rights to your own soul.
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
